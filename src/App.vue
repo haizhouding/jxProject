@@ -20,8 +20,8 @@ export default {
 
 <style>
     *{box-sizing:border-box;}
-    body{width: 100%}
-    body,nav,dl,dt,dd,p,h1,h2,h3,h4,ul,ol,li,input,button,textarea,footer{margin:0;padding:0; color: blue}
+    body{width: 10rem; overflow: hidden;}
+    body,nav,dl,dt,dd,p,h1,h2,h3,h4,ul,ol,li,input,button,textarea,footer{margin:0;padding:0;}
     body{font: .32rem 'Microsoft Yahei','Simsun';  color:#333;background:#fff;-webkit-text-size-adjust: none; min-width:320px;}
     h1,h2,h3,h4,h5,h6{font-size:100%}
     ul,ol{list-style:none}
