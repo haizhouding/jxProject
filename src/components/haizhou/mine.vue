@@ -1,5 +1,5 @@
 <template>
-    <h1>海舟</h1>
+    <p>海舟</p>
 </template>
 
 <script>
