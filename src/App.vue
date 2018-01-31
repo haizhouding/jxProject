@@ -20,6 +20,7 @@ export default {
 
 <style>
     #app .tabbar{
+      width: 100%;
       position: fixed;
       left: 0;
       right: 0;
