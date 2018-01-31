@@ -1,18 +1,26 @@
 <template>
-  <h1>{{msg}}</h1>
+<div>
+    <Bar-Sort></Bar-Sort>
+    
+</div>
+   
 </template>
 
 <script>
+    import BarSort from './barSort/BarSort.vue'
     export default {
         data() {
             return {
-                msg: '分类'
+           
             }
+        },
+        components: {
+            BarSort
         }
     }
 </script>
-<style>
-
+<style lang="css" scoped>
+   
 </style>
 
 

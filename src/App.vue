@@ -1,10 +1,10 @@
 <template>
     <div id="app">
-      <div class="searchBar">
+      <!-- <div class="searchBar">
           <h1>酒仙网</h1>
           <input type="text">
           <input type="button" value="搜索">
-      </div>
+      </div> -->
       <router-view></router-view>
       <div class="tabbar">
           <router-link to="/home"><img src="https://img08.jiuxian.com/bill/2016/0224/cccd8df26a754c139de800406af82178.png" alt=""></router-link> 
@@ -24,7 +24,7 @@ export default {
 
 <style>
     *{box-sizing:border-box;}
-    body{width: 100%}
+    body{width: 100%; color: blue;}
     body,nav,dl,dt,dd,p,h1,h2,h3,h4,ul,ol,li,input,button,textarea,footer{margin:0;padding:0;}
     body{font: .32rem 'Microsoft Yahei','Simsun';  color:#333;background:#fff;-webkit-text-size-adjust: none; min-width:320px;}
     h1,h2,h3,h4,h5,h6{font-size:100%}
