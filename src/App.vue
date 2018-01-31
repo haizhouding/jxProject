@@ -19,15 +19,42 @@ export default {
 </script>
 
 <style>
+    *{box-sizing:border-box;}
+    body{width: 100%}
+    body,nav,dl,dt,dd,p,h1,h2,h3,h4,ul,ol,li,input,button,textarea,footer{margin:0;padding:0; color: blue}
+    body{font: .32rem 'Microsoft Yahei','Simsun';  color:#333;background:#fff;-webkit-text-size-adjust: none; min-width:320px;}
+    h1,h2,h3,h4,h5,h6{font-size:100%}
+    ul,ol{list-style:none}
+    a{text-decoration:none;color:#1a1a1a}
+    a:hover, a:active, a:focus{color:#1c5aa2;text-decoration: none;}
+    a:active{color:#aaa;}
+    img{vertical-align:middle;border:0;-ms-interpolation-mode:bicubic;}
+    button,input,select,textarea{font-size:100%; vertical-align:middle;outline:none;}
+    textarea{resize:none}
+    button,input[type="button"],input[type="reset"],input[type="submit"] {cursor:pointer;-webkit-appearance:button;-moz-appearance:button}
+    input:focus:-moz-placeholder,input:focus::-webkit-input-placeholder {color:transparent}
+    button::-moz-focus-inner,input::-moz-focus-inner { padding:0; border:0}
+    table { border-collapse:collapse; border-spacing:0}
+    /*.fl{float:left;}.fr{float:right;}.hide{display:none;}.show{display: block;}*/
+    .ellipsis { white-space:nowrap; text-overflow:ellipsis; overflow:hidden}
+    .break { word-break:break-all; word-wrap:break-word}
+    header, footer, article, section, nav, menu, hgroup {display: block;clear:all;}
+
     #app .tabbar{
+      width: 100%;
       position: fixed;
       left: 0;
-      right: 0;
       bottom: 0;
-      background: wheat;
+      background: #f1f1f1;
       display: flex;
       align-items: center;
       justify-content: space-around;
-      height: 50px;
+      height: 1.146667rem;
     }
+    
+    #app .tabbar img {
+      width: 1.173333rem;
+      height: 1.013333rem;
+    }
+
 </style>
