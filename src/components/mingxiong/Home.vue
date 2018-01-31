@@ -1,7 +1,7 @@
 <template>
     <div class="Home">
        <slide-show></slide-show>
-       <pic-list></pic-list>
+       <!-- <pic-list></pic-list> -->
     </div>
 </template>
 <script>

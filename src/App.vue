@@ -1,6 +1,10 @@
 <template>
     <div id="app">
-      <div class="searchBar"></div>
+      <!-- <div class="searchBar">
+          <h1>酒仙网</h1>
+          <input type="text">
+          <input type="button" value="搜索">
+      </div> -->
       <router-view></router-view>
       <div class="tabbar">
           <router-link to="/home"><img src="https://img08.jiuxian.com/bill/2016/0224/cccd8df26a754c139de800406af82178.png" alt=""></router-link> 
@@ -20,7 +24,11 @@ export default {
 
 <style>
     *{box-sizing:border-box;}
+<<<<<<< HEAD
     body{width: 10rem; overflow: hidden;}
+=======
+    body{width: 100%; color: blue;}
+>>>>>>> 0c66e19d824fe4a81d82d24711506cebb4b737f8
     body,nav,dl,dt,dd,p,h1,h2,h3,h4,ul,ol,li,input,button,textarea,footer{margin:0;padding:0;}
     body{font: .32rem 'Microsoft Yahei','Simsun';  color:#333;background:#fff;-webkit-text-size-adjust: none; min-width:320px;}
     h1,h2,h3,h4,h5,h6{font-size:100%}
@@ -55,6 +63,25 @@ export default {
     #app .tabbar img {
       width: 1.173333rem;
       height: 1.013333rem;
+    }
+
+    #app .searchBar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 1.04rem;
+      background: rgba(230, 54, 58, 0.7);
+    }
+    #app .searchBar h1 {
+      float: left;
+      width: 1.52rem;
+      height: .72rem;
+    }
+     #app .searchBar input[type='button'] {
+      float: left;
+    }
+      #app .searchBar input[type='text'] {
+      float: left;
     }
 
 </style>
