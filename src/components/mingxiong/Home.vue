@@ -12,7 +12,7 @@ export default {
     name: "Home",
     data () {
         return {
-            msg: ''
+            
         }
     },
     components: {
@@ -24,5 +24,6 @@ export default {
 <style lang="css" scoped>
     .Home{
         width: 31.25rem;
+        overflow: hidden;
     }
 </style>

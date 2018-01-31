@@ -24,11 +24,8 @@ export default {
 
 <style>
     *{box-sizing:border-box;}
-<<<<<<< HEAD
     body{width: 10rem; overflow: hidden;}
-=======
     body{width: 100%; color: blue;}
->>>>>>> 0c66e19d824fe4a81d82d24711506cebb4b737f8
     body,nav,dl,dt,dd,p,h1,h2,h3,h4,ul,ol,li,input,button,textarea,footer{margin:0;padding:0;}
     body{font: .32rem 'Microsoft Yahei','Simsun';  color:#333;background:#fff;-webkit-text-size-adjust: none; min-width:320px;}
     h1,h2,h3,h4,h5,h6{font-size:100%}
