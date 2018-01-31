@@ -36,7 +36,7 @@ export default {
         height: 1.333333rem;
         background-color: #e2e2e2;
     }
-    .bgDiv div{
+    .bgDiv>div{
         width: 8.986667rem;
         height: .8rem;
         margin: .266667rem auto;

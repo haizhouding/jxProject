@@ -28,24 +28,27 @@ export default {
         background-color: #efefef;
     }
     .nav_m a {
+        text-align: center;
+        width:1.493333rem;
        line-height:1.733333rem;
-       margin: 0 .8rem;
        color: #848da1;
     }
     .nav_m a:nth-of-type(1){
-        background: url(https://m.jiuxian.com/mjava_statics/images/headIcon.png) no-repeat -.08rem 0.01rem;
+        text-align: right ;
+        background: url(https://m.jiuxian.com/mjava_statics/images/headIcon.png) no-repeat .76rem 0.01rem;
         background-size:5.573333rem 1.093333rem; 
     }
     .nav_m a:nth-of-type(2){
-        background: url(https://m.jiuxian.com/mjava_statics/images/headIcon.png) no-repeat -1.013333rem .01rem;
+        width: .88rem;
+        background: url(https://m.jiuxian.com/mjava_statics/images/headIcon.png) no-repeat -.913333rem .01rem;
         background-size:5.573333rem 1.093333rem; 
     }
     .nav_m a:nth-of-type(3){
-        background: url(https://m.jiuxian.com/mjava_statics/images/headIcon.png) no-repeat -1.866667rem .01rem;
+        background: url(https://m.jiuxian.com/mjava_statics/images/headIcon.png) no-repeat -1.566667rem .01rem;
         background-size:5.573333rem 1.093333rem; 
     }
     .nav_m a:nth-of-type(4){
-        background: url(https://m.jiuxian.com/mjava_statics/images/headIcon.png) no-repeat -2.8rem .01rem;
+        background: url(https://m.jiuxian.com/mjava_statics/images/headIcon.png) no-repeat -2.6rem .01rem;
         background-size:5.573333rem 1.093333rem; 
     }
 </style>

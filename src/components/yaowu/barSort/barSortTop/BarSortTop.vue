@@ -45,7 +45,7 @@ export default {
         width: .533333rem;
         height: .8rem;
     }
-    .nav_top a:nth-of-type(3){
+    .nav_top>a:nth-of-type(3){
         width: .666667rem;
         height: 1.066667rem;
         background: url(https://m.jiuxian.com/mjava_statics/images/headIcon.png) no-repeat -4.24rem 0.2rem;
