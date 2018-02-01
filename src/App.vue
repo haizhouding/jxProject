@@ -1,5 +1,6 @@
 <template>
     <div id="app">
+   
       <!-- <div class="searchBar">
           <h1>酒仙网</h1>
           <input type="text">
@@ -24,6 +25,7 @@ export default {
 
 <style>
     *{box-sizing:border-box;}
+    body{width: 10rem; overflow: hidden;}
     body{width: 100%; color: blue;}
     body,nav,dl,dt,dd,p,h1,h2,h3,h4,ul,ol,li,input,button,textarea,footer{margin:0;padding:0;}
     body{font: .32rem 'Microsoft Yahei','Simsun';  color:#333;background:#fff;-webkit-text-size-adjust: none; min-width:320px;}
@@ -61,23 +63,6 @@ export default {
       height: 1.013333rem;
     }
 
-    #app .searchBar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      height: 1.04rem;
-      background: rgba(230, 54, 58, 0.7);
-    }
-    #app .searchBar h1 {
-      float: left;
-      width: 1.52rem;
-      height: .72rem;
-    }
-     #app .searchBar input[type='button'] {
-      float: left;
-    }
-      #app .searchBar input[type='text'] {
-      float: left;
-    }
+   
 
 </style>
