@@ -8,7 +8,11 @@
                 <h2>52°贵州茅台集团白金原浆酒(5A)绵柔425ml*6瓶 整箱白酒</h2>
                 <p class="advWords">{{detailList.productPromo.advWords}}</p>
                 <p class="price"><span>￥</span>{{detailList.productPromo.price}}<i>酒仙价:{{detailList.productPromo.jxPrice}}</i></p>
+                <p class="onSale">限时打折</p>
             </div>
+            <p class="stripe"></p>
+            <coupon></coupon>
+            <p class="stripe"></p>
             
         </div>  
     </div>
@@ -19,6 +23,7 @@
 import HeaderBar from '../yaowu/barSort/barSortTop/BarSortTop.vue'
 import downLoad from './downLoad'
 import PictureShow from './PictureShow'
+import coupon from './coupon'
 
 export default {
     name: "cart",
@@ -66,7 +71,8 @@ export default {
      components:{
         HeaderBar,
         downLoad,
-        PictureShow
+        PictureShow,
+        coupon
     }
 }
 </script>
@@ -95,5 +101,19 @@ export default {
         color: #999999;
         line-height: .853333rem;
         margin-left: .24rem;
+    }
+    #details .main .onSale {
+        background: #ffa855;
+        height: .426667rem;
+        line-height: .426667rem;
+        color: white;
+        width: 1.493333rem;
+        text-align: center;
+        margin-bottom: .4rem;  
+    }
+    #details .stripe {
+        height: .213333rem;
+        width: 100%;
+        background: #f3f5f6;
     }
 </style>
