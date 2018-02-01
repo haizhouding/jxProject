@@ -1,9 +1,9 @@
 <template>
     <div class="nav_m" v-show="is_show">
-        <a href="javascript:;">首页</a>
-        <a href="javascript:;">搜索</a>
-        <a href="javascript:;">购物车</a>
-        <a href="javascript:;">我的酒仙</a>
+        <router-link to="/home"><a href="javascript:;">首页</a></router-link> 
+        <router-link to="/types"><a href="javascript:;">搜索</a></router-link>
+        <router-link to="/cart"><a href="javascript:;">购物车</a></router-link>
+        <router-link to="/mine"><a href="javascript:;">我的酒仙</a></router-link>
      </div>
 </template>
     
