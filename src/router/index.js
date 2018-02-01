@@ -7,6 +7,11 @@ import home from '../components/mingxiong/Home.vue'
 import types from '../components/yaowu/types.vue'
 import cart from '../components/haizhou/cart.vue'
 
+import list from '../components/yaowu/list.vue'
+
+
+
+
 
 export default new Router({
   routes: [
@@ -14,6 +19,7 @@ export default new Router({
     {path: '/home', component: home},
     {path: '', component: home},
     {path: '/types', component: types},
-    {path: '/cart', component: cart}
+    {path: '/cart', component: cart},
+    {path: '/list', component: list},
   ]
 })
