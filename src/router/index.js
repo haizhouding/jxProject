@@ -5,13 +5,13 @@ Vue.use(Router)
 import mine from '../components/zengjian/mine'
 import home from '../components/mingxiong/Home.vue'
 import types from '../components/yaowu/types.vue'
-<<<<<<< HEAD
+
 import cart from '../components/zengjian/cart.vue'
 //跳到商品列表
 import list from '../components/yaowu/BarList.vue'
-=======
+
 import cart from '../components/haizhou/cart.vue'
->>>>>>> a618796415f4c8d279485a5838794c83ac084db7
+
 
 
 export default new Router({

@@ -5,7 +5,7 @@
 
 <script>
 export default {
-    name:"ceng.vue",
+    name:"ceng",
     data () {
         return{
 
