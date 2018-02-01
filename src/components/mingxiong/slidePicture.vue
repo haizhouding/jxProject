@@ -20,7 +20,7 @@ export default {
         width: 10rem;
         background-color: red;
         display: flex;
-        justify-content: space-between;
+        /* justify-content: space-between; */
     }
     .slidePicture figure{
         width: 2.8rem;
