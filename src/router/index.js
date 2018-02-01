@@ -6,7 +6,7 @@ import mine from '../components/zengjian/mine'
 import home from '../components/mingxiong/Home.vue'
 import types from '../components/yaowu/types.vue'
 import cart from '../components/haizhou/cart.vue'
-import list from '../components/yaowu/list.vue'
+
 
 
 
