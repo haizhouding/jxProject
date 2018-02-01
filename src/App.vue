@@ -1,5 +1,6 @@
 <template>
     <div id="app">
+   
       <!-- <div class="searchBar">
           <h1>酒仙网</h1>
           <input type="text">
@@ -62,23 +63,6 @@ export default {
       height: 1.013333rem;
     }
 
-    #app .searchBar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      height: 1.04rem;
-      background: rgba(230, 54, 58, 0.7);
-    }
-    #app .searchBar h1 {
-      float: left;
-      width: 1.52rem;
-      height: .72rem;
-    }
-     #app .searchBar input[type='button'] {
-      float: left;
-    }
-      #app .searchBar input[type='text'] {
-      float: left;
-    }
+   
 
 </style>
