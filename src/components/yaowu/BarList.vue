@@ -6,12 +6,14 @@
             <a href="javascript:;" @click="showFn">筛选</a>
         </div>
         <Bar-List-More></Bar-List-More>
+        <Element></Element>
     </div>
 </template>
     
 <script>
 
 import BarListMore from './barSort/BarListMore.vue'
+import Element from './barSort/element/Element.vue'
 
 export default {
     name: "BarList",
@@ -21,7 +23,8 @@ export default {
         };
     },
     components: {
-         BarListMore
+         BarListMore,
+         Element
     },
     methods:{
         showFn(){
