@@ -1,13 +1,12 @@
 <template>
-    <div class="slideShow swiper-container">
+    <div class="swiper-container slideShow">
         <div class="swiper-wrapper">
-            <div v-for="value in imgList" :key="value" class="swiper-slide">
-                <img :src="value" alt="">
+            <div v-for="value in imgList" :key="value" class="swiper-slide" :style="{backgroundImage: 'url(' + value + ')',
+            backgroundSize: '10rem'}">
+
             </div>
         </div>
-        <div class="swiper-pagination">
-
-        </div>
+        <div class="swiper-pagination"></div>
     </div>
 
 </template>
@@ -20,6 +19,9 @@ export default {
         return {
             timeId: null,
             imgid: 0,
+            styleObj: {
+                
+            },
             imgList: [
                 "https://img09.jiuxian.com/bill/2018/0130/6882d20799fc471b929abacde1005371.jpg",
                 "https://img06.jiuxian.com/bill/2018/0131/aabca6ead521421c8c2377e1a16d9480.jpg",
@@ -34,11 +36,12 @@ export default {
         };
     },
     mounted() {
-        new Swiper('.swiper-container', {
+        new Swiper('.swiper-container', {       
             pagination: {
                 el: '.swiper-pagination',
+                clickable :true
             },
-            loop: true
+            loop: true,
         });
     },
     methods: {
@@ -47,18 +50,12 @@ export default {
 }
 </script>
 <style lang="css" scoped>
-    .slideShow{
-        width: 10rem;
-        overflow: hidden;
-        background-color: red;
-    }
-    .slideShow div{
-        width: 90rem;
-        height: 4.8rem;
-        display: flex;
-    }
-    .slideShow div img {
-        width: 100%;
-        height: 4.8rem;
-    }
+    #slideShow {
+            width:100%;
+            margin: 0 auto;
+        }
+   .slideShow>div>div {
+       width: 10rem;
+       height: 4.8rem;
+   }
 </style>

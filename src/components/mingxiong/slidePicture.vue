@@ -44,13 +44,12 @@ export default {
     }
     .slidePicture>div>div {
         width: 2.933333rem;
-        /* height: 4.666667rem; */
     }
     img{
         width: 2.933333rem;
     }
     p {
-        /* line-height: .533333rem; */
+       
     }
     p:nth-of-type(1) {
         color: #252525;
