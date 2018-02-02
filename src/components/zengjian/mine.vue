@@ -26,7 +26,6 @@
                     <span>{{ suiji }}</span>
                     <a href="#" @click="abb">换一批</a>
                 </div>
-                  
             </div>
           <div class="btn">
              <a href="#">立即登录</a>

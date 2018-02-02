@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 Vue.use(Router)
 
+
+
 import mine from '../components/zengjian/mine'
 import home from '../components/mingxiong/Home.vue'
 import types from '../components/yaowu/types.vue'
