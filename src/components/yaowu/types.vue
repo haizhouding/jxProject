@@ -13,7 +13,7 @@
         <a href="#">红酒整箱</a>
         <a href="#">值得买</a>
         <a href="#">销量排行</a>
-        <router-link to="/RegistrationPage"><a href="#">礼尚往来</a></router-link>
+       <a href="#">礼尚往来</a>
     </div>
 </div>
    
@@ -43,7 +43,7 @@
        height: 2.16rem;
        text-align: center;
        line-height: 3.466667rem ;
-       border-bottom: 1px solid #f6f6f6;
+       border-bottom: 1px solid #f6f6f6;    
    }
    .table_t a:nth-of-type(1){
        background: url(https://m.jiuxian.com/mjava_statics/images/selectIcon0314.png) no-repeat 1.253333rem .4rem   ;

@@ -32,7 +32,7 @@
              <a href="#">立即登录</a>
           </div>
           <div class="zhao">
-              <a href="#">免费注册</a>
+               <router-link to="/RegistrationPage"><a href="#">免费注册</a></router-link>
               <a href="#">找回密码</a>
           </div>
           <div class="foot">
