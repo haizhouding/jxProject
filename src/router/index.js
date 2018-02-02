@@ -12,7 +12,7 @@ import list from '../components/yaowu/BarList.vue'
 import cart from '../components/haizhou/cart.vue'
 
 
-
+//跳到注册页面
 
 
 
