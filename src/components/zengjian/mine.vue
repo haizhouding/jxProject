@@ -33,7 +33,7 @@
           </div>
           <div class="zhao">
                <router-link to="/RegistrationPage"><a href="#">免费注册</a></router-link>
-              <a href="#">找回密码</a>
+              <router-link to="/BackPsd"><a href="#">找回密码</a></router-link>
           </div>
           <div class="foot">
               <p></p><a href="#">合作伙伴登录</a>  <p></p>
