@@ -16,7 +16,6 @@ import cart from '../components/haizhou/cart.vue'
 
 
 
-
 export default new Router({
   routes: [
     {path: '/mine', component: mine},
