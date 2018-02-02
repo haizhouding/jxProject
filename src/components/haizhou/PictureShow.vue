@@ -1,14 +1,16 @@
 <template>
     <div id="pictureShow">
         <div class="swiper-container">
-            <div class="swiper-wrapper">
+            <div class="swiper-wrapper ">
                 <div class="swiper-slide" 
                 v-for="src in pictureList.srcList" 
-                :key="src.id" 
-                :style="{backgroundImage: 'url(' + src + ')',
-                backgroundSize: pictureList.width + ',' + pictureList.height,
-                width: pictureList.width ,
-                height: pictureList.height}"></div>
+                :key="src.id"
+                >            
+                <img :src="src" :style="{
+                   width: pictureList.width,
+                   height: pictureList.height
+                }" />
+                </div>
             </div>
     <!-- Add Pagination -->
              <div class="swiper-pagination"></div>  
