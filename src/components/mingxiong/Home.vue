@@ -19,7 +19,7 @@
        <headline-img-two :index="3"></headline-img-two>     
        <headline-list :id="5"></headline-list>   
        <headline-img-three></headline-img-three>
-                   
+       <h4>爆款推荐</h4>            
     </div>
 </template>
 <script>
@@ -60,5 +60,11 @@ export default {
         width: 10rem;
         height: 366.373333rem;
         overflow: hidden;
+    }
+    .Home>h4 {
+        text-align: center;
+        font-weight: normal;
+        color: #666666;
+        line-height: .853333rem;
     }
 </style>
