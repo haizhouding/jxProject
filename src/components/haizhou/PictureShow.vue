@@ -1,28 +1,47 @@
 <template>
     <div id="PictureShow">
-       <img src="http://img10.jiuxian.com/2016/0509/f4e0df8ca8194e4fb3412972af9dee6d5.jpg" alt="">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" 
+                v-for="src in pictureList.srcList" 
+                :key="src.id" 
+                :style="{backgroundImage: 'url(' + src + ')',
+                backgroundSize: pictureList.width + ',' + pictureList.height,
+                width: pictureList.width ,
+                height: pictureList.height}"></div>
+            </div>
+    <!-- Add Pagination -->
+             <div class="swiper-pagination"></div>
+        </div>
     </div>
 </template>
     
 <script>
-export default {
-    name: "pictureShow",
-    data () {
-        return {
-             
-        };
+    import Swiper from 'swiper'
+    import 'swiper/dist/css/swiper.css'
+    export default {
+        name: "pictureShow",
+        data () {
+            return {
+                
+            };
+        },
+        mounted() {
+            new Swiper('.swiper-container', {
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+                loop: true
+            });
+        },
+        props:['pictureList']
     }
-}
 </script>
     
 <style lang="css" scoped>
     #PictureShow {
-        width: 9.066667rem;
-        height: 9.066667rem;
+        width:100%;
         margin: 0 auto;
     }
-    #PictureShow img {
-        width: 9.066667rem;
-        height: 9.066667rem;
-    }
+
 </style>
