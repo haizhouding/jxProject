@@ -1,12 +1,12 @@
 <template>
     <div class="slidePicture">
-        <figure v-for="num in 4" :key="num">
+        <figure v-for="value in imgList" :key="num">
             <a href="#">
-                <img src="https://img07.jiuxian.com/2018/0125/238888580d9b438eaa2806e2a94b2b4a4.jpg" alt="">
+                <img :src="value.proImg" alt="">
             </a>
-            <p>酒的详细信息以后ajax请求</p>
-            <p>酒的现价</p>
-            <p>酒的原价</p>
+            <p>{{ value.proName }}</p>
+            <p>￥{{ value.proPrice }}</p>
+            <p>￥{{ value.jxPrice }}</p>
         </figure>
     </div>
 </template>
@@ -15,18 +15,22 @@ export default {
     name: "slidePictrue",
     data () {
         return {
-            imgList: [1,2,3,4]
+            imgList: null
         };
+    },
+    created() {
+        this.axios.get("http://localhost:8888/getMiaopai")
+            .then(res => {
+                this.imgList = res.data.killProList
+            })
     }
 }
 </script>
 <style lang="css" scoped>
     .slidePicture{
         width: 10rem;
-        /* background-color: red; */
         display: flex;
         justify-content: space-between;
-        /* flex-wrap: wrap; */
     }
     .slidePicture figure{
         width: 2.933333rem;

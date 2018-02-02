@@ -10,6 +10,7 @@ import types from '../components/yaowu/types.vue'
 import list from '../components/yaowu/BarList.vue'
 
 import cart from '../components/haizhou/cart.vue'
+import RegistrationPage from '../components/yaowu/RegistrationPage.vue'
 
 
 //跳到注册页面
@@ -17,6 +18,7 @@ import cart from '../components/haizhou/cart.vue'
 
 
 export default new Router({
+  mode: 'history',
   routes: [
     {path: '/mine', component: mine},
     {path: '/home', component: home},
@@ -24,5 +26,6 @@ export default new Router({
     {path: '/types', component: types},
     {path: '/cart', component: cart},
     {path: '/list', component: list},
+    {path: '/RegistrationPage', component: RegistrationPage},
   ]
 })
