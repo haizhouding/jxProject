@@ -1,15 +1,19 @@
 <template>
-    <div class="slideShow">
-        <div>
-            <a href="#" v-for="value in imgList">
+    <div class="slideShow swiper-container">
+        <div class="swiper-wrapper">
+            <div v-for="value in imgList" :key="value" class="swiper-slide">
                 <img :src="value" alt="">
-            </a>
+            </div>
+        </div>
+        <div class="swiper-pagination">
+            
         </div>
     </div>
 
 </template>
 <script>
-
+import Swiper from 'swiper'
+import 'swiper/dist/css/swiper.css'
 export default {
     name: "slideShow",
     data () {
@@ -28,6 +32,14 @@ export default {
                 "https://img06.jiuxian.com/bill/2018/0129/9574bec32b644cd3b15e1f130c3d571f.jpg"
             ],
         };
+    },
+    mounted() {
+        new Swiper('.swiper-container', {
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            loop: true
+        });
     },
     methods: {
         
