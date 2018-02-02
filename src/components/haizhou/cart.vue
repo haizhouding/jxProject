@@ -13,6 +13,7 @@
             <p class="stripe"></p>
             <coupon></coupon>
             <p class="stripe"></p>
+            <p class="coins">金币 <span>赠送<i>99</i>个金币</span></p>
             
         </div>  
     </div>
@@ -134,5 +135,8 @@ export default {
         height: .213333rem;
         width: 100%;
         background: #f3f5f6;
+    }
+    #details .coins{
+        
     }
 </style>
