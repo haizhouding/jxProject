@@ -15,6 +15,7 @@
             <router-link to="/cart"><img src="https://img08.jiuxian.com/bill/2016/0224/42baf46987b6460bb43b3396e9941653.png" alt=""></router-link> 
             <router-link to="/mine"><img src="https://img09.jiuxian.com/bill/2016/0224/cba9029a8f4444a989a2ab5aa84c6538.png" alt=""></router-link>
         </div>
+      </div>
   </div>
 </template>
 
