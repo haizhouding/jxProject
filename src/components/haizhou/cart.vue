@@ -67,7 +67,7 @@ export default {
                 "couponNameList": ["满1299减70", "满596减35", "满396减20"],
                 "isCollect": false
             },
-            pictureList: {
+            pictureList: { 
                 width: '9.066667rem',
                 height: '9.066667rem',
                 srcList: ['http://img07.jiuxian.com/2017/1216/b46e8e6dd5a4479bab49effc9463a9985.jpg',

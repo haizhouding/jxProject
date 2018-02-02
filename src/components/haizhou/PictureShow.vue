@@ -1,5 +1,5 @@
 <template>
-    <div id="PictureShow">
+    <div id="pictureShow">
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide" 
@@ -11,7 +11,7 @@
                 height: pictureList.height}"></div>
             </div>
     <!-- Add Pagination -->
-             <div class="swiper-pagination"></div>
+             <div class="swiper-pagination"></div>  
         </div>
     </div>
 </template>
@@ -40,7 +40,7 @@
 </script>
     
 <style lang="css" scoped>
-    #PictureShow {
+    #pictureShow {
         width:100%;
         margin: 0 auto;
     }
