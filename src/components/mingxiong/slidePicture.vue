@@ -4,9 +4,9 @@
             <a href="#">
                 <img :src="value.proImg" alt="">
             </a>
-            <p>{{ value.proName }}</p>
-            <p>￥{{ value.proPrice }}</p>
-            <p>￥{{ value.jxPrice }}</p>
+            <p>{{ value.proName }} {{ msg }}</p>
+            <p>￥{{ value.proPrice | keepDecimal}}</p>
+            <p>￥{{ value.jxPrice | keepDecimal}}</p>
         </figure>
     </div>
 </template>
@@ -23,6 +23,12 @@ export default {
             .then(res => {
                 this.imgList = res.data.killProList
             })
+    },
+    filters: {
+        keepDecimal(value) {
+        
+            return value.toFixed(2)
+        }
     }
 }
 </script>
@@ -33,19 +39,20 @@ export default {
         justify-content: space-between;
     }
     .slidePicture figure{
-        width: 2.933333rem;
         margin: 0;
         padding: 0;
     }
-    .slidePicture figure img {
-        width: 2.133333rem;
-        height: 1.866667rem;
-        margin: 0 auto;
+    .slidePicture figure a {
+        width: 2.933333rem;
         display: block;
-        margin-bottom: .266667rem;
+    }
+    .slidePicture figure img {
+        width: 2.933333rem;
+        display: block;
     }
     .slidePicture figure p {
         padding-left: .266667rem;
+        text-align: center;
     }
     .slidePicture figure p:nth-of-type(2) {
         color: #fc5a5a;
@@ -56,6 +63,6 @@ export default {
         color: #a5c2eb;
         text-decoration: line-through;
         line-height: .426667rem;
-        margin-bottom: .266667rem;
+        /* margin-bottom: .266667rem; */
     }
 </style>
