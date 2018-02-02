@@ -9,6 +9,7 @@ import types from '../components/yaowu/types.vue'
 import list from '../components/yaowu/BarList.vue'
 
 import cart from '../components/haizhou/cart.vue'
+import RegistrationPage from '../components/yaowu/RegistrationPage.vue'
 
 
 
@@ -24,5 +25,6 @@ export default new Router({
     {path: '/types', component: types},
     {path: '/cart', component: cart},
     {path: '/list', component: list},
+    {path: '/RegistrationPage', component: RegistrationPage},
   ]
 })

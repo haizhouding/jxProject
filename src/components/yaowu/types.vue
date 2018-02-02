@@ -13,7 +13,7 @@
         <a href="#">红酒整箱</a>
         <a href="#">值得买</a>
         <a href="#">销量排行</a>
-        <a href="#">礼尚往来</a>
+        <router-link to="/RegistrationPage"><a href="#">礼尚往来</a></router-link>
     </div>
 </div>
    
