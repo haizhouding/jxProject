@@ -34,7 +34,7 @@ export default {
        color: #848da1;
     }
     .nav_m a:nth-of-type(1){
-        text-align: right ;
+        text-align: right;
         background: url(https://m.jiuxian.com/mjava_statics/images/headIcon.png) no-repeat .76rem 0.01rem;
         background-size:5.573333rem 1.093333rem; 
     }
