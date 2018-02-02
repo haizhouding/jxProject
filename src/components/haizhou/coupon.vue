@@ -1,5 +1,6 @@
 <template>
     <div id="coupon" >
+        <div class="backColor" v-show='!isShow'></div>
         <div class="cou" @click="show">
             领券
             <span>满1299减70</span>
@@ -168,5 +169,13 @@ export default {
             border-radius: .333333rem;
             margin-left: .133333rem;
 
+        }
+        .backColor{
+            position: fixed;
+            top: 0;
+            z-index: 998;
+            width: 100%;
+            height: 100%;
+            background:rgba(0, 0, 0, 0.5);
         }
 </style>

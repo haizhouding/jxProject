@@ -7,7 +7,7 @@
           <input type="button" value="搜索">
       </div> -->
       <router-view></router-view>
-      <div class="tabbar">
+      <div class="tabbar" v-show="show">
           <router-link to="/home"><img src="https://img08.jiuxian.com/bill/2016/0224/cccd8df26a754c139de800406af82178.png" alt=""></router-link> 
           <router-link to="/types"><img src="https://img07.jiuxian.com/bill/2016/0224/36a49b28ec5e4cdf9dbe37988199487d.png" alt=""></router-link> 
           <router-link to="/aaa"><img src="https://img10.jiuxian.com/bill/2018/0130/6af386f816f548afb09efd7d333487c9.png" alt=""></router-link> 
@@ -19,7 +19,20 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  methods: {
+      fn() {
+        console.log(this.$route.params);
+      }
+  },
+  computed: {
+    show() {
+      if(this.$route.path == '/home') {
+        console.log(this.$route.params.path );
+        return true;
+      }
+    }
+  }
 }
 </script>
 
