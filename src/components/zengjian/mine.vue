@@ -74,11 +74,11 @@ import BarSortTop from '../yaowu/barSort/barSortTop/BarSortTop.vue'
        .user .top li p{width: 1.966667rem;margin-left: 1.666667rem;text-align: center} 
        .user .top li p:hover{border-bottom:2px solid red;color: red;}
        .user .oneuser{width: 8rem;height: 1.066667rem;margin-left:1.266667rem;background-size:4.533333rem;  border:1px solid #000;
-       background: url(https://misc.jiuxian.com/m_user/images/headIcon.png)no-repeat -4.5rem 0; background-size: 8rem;}
+       background: url(https://misc.jiuxian.com/m_user/images/headIcon.png)no-repeat -2.68rem .1rem; background-size: 5rem;}
        .user .oneuser i{height: .613333rem;}
-       .user .oneuser input{height: 1.02rem;width: 6.333333rem;border-right: none;border-left: none;border-top: none; margin-left: .733333rem;font-size: .426667rem;}
-       .user .usertwo{height:1.066667rem;margin-top:1.366667rem; width: 8rem;height: 1.066667rem;margin-left:1.266667rem;background: url(https://misc.jiuxian.com/m_user/images/loginIcon.png) 6.3rem -0.7rem; background-size:8rem;  border:1px solid #000;}
-       .user .usertwo input{height: 1.02rem;width: 6.333333rem; margin-left: .733333rem;border-right: none;border-left: none;border-top: none; font-size: .426667rem;}
+       .user .oneuser input{height: 0.8rem;width: 6.333333rem;border: none;  margin-left: .733333rem;font-size: .426667rem;}
+       .user .usertwo{height:1.066667rem;margin-top:1.366667rem; width: 8rem;height: 1.066667rem;margin-left:1.266667rem;background: url(https://misc.jiuxian.com/m_user/images/loginIcon.png)no-repeat -1rem -.2rem; background-size:5rem;  border:1px solid #000;}
+       .user .usertwo input{height: 0.8rem;width: 6.333333rem; margin-left: .733333rem;border: none; font-size: .426667rem;}
        .user .yzm{height: 1.02rem;margin-top: .8rem;} 
        .user .yzm input{height: 1.02rem;margin-left:1.266667rem;}
        .user .yzmimg{height: 1.02rem; width:3rem;float: right;}
@@ -95,7 +95,7 @@ import BarSortTop from '../yaowu/barSort/barSortTop/BarSortTop.vue'
        .user .foot h6{text-align: center;width:1.333333rem;}
        .user .foot a{margin-left:3.9rem;font-size: .35rem;}
        .user .foot li{height:1.2rem;width: 1.253333rem;margin-left: 1.333333rem;margin-top: 1.333333rem;float: left;} 
-       .user .foot li:first-of-type{ background: url(https://misc.jiuxian.com/m_user/images/loginIcon.png) -9.843333rem 3.8rem;background-size:8rem;}
-       .user .foot li:last-of-type{ background: url(https://misc.jiuxian.com/m_user/images/loginIcon.png) -7.84333rem 3.8rem;background-size:8rem;}
+       .user .foot li:first-of-type{ background: url(https://misc.jiuxian.com/m_user/images/loginIcon.png) -7.43333rem -1.8rem;background-size:6rem;}
+       .user .foot li:last-of-type{ background: url(https://misc.jiuxian.com/m_user/images/loginIcon.png) -8.84333rem -1.8rem;background-size:6rem;}
 </style>    
 
