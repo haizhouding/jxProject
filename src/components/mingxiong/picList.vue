@@ -21,7 +21,22 @@
                <img src="https://img10.jiuxian.com/bill/2018/0130/388d0021322448e2811d9d01eca0eb79.jpg" alt="">
            </a>
        </div>
-       <p></p>
+       <div>
+           <img src="https://img09.jiuxian.com/bill/2017/1109/acb646caea3d4325b3664c9142852543.jpg" alt="">
+           <p>年货节  礼盒会场   五折秒杀礼盒！</p>
+       </div>
+       <div>
+           <h3>掌上秒拍
+               <span>距结束</span>
+               <span class="timeSpan">00</span> : 
+               <span class="timeSpan">33</span> : 
+               <span class="timeSpan">13</span>
+           </h3>
+           <p>更多商品等你来抢!
+               <span>&gt;</span>
+           </p>
+       </div>
+       <hr />
     </div>
 </template>
 <script>
@@ -51,7 +66,6 @@ export default {
     .picList{
         width: 10rem;
         margin-top: 1px;
-        height: 10.4rem;
         /* background-color: purple; */
     }
     .picList div img {
@@ -65,5 +79,56 @@ export default {
     }
     .picList div:nth-of-type(3) a img {
         width: 5rem;
+    }
+    .picList div:nth-of-type(4) {
+        height: 1.066667rem;
+        width: 10rem;
+        display: flex;
+    }
+    .picList div:nth-of-type(4) img {
+        width: 2.266667rem;
+        height: .48rem;
+        margin: .266667rem;
+    }   
+    .picList div:nth-of-type(4) p{
+        height: .533333rem;
+        line-height: .533333rem;
+        margin-top: .266667rem;
+        padding-left: .32rem; 
+        border-left: 1px solid #ededed;
+    } 
+    .picList div:nth-of-type(5) {
+        display: flex;
+        width: 9.333333rem;
+        margin: 0 auto;
+        justify-content: space-between;
+    }
+    .picList div:nth-of-type(5) h3 span{
+        color: #666666;
+    }
+    .picList div:nth-of-type(5) h3 .timeSpan {
+        display: inline-block;
+        width: .533333rem;
+        height: .426667rem;
+        border-radius: .053333rem;
+        color: #fff;
+        background-color: #858585;
+        text-align: center;
+        padding: 0 .08rem;
+    }
+    .picList div:nth-of-type(5) p{
+        color: #999999;
+    }
+    .picList div:nth-of-type(5) p span{
+        display: inline-block;
+        width: .4rem;
+        height: .43rem;
+        background-color: #858585;
+        border-radius: 50%;
+        text-align: center;
+        line-height: .43rem;
+        color: #fff;
+        font-family: 黑体;
+        margin-left: .32rem;    
     }
 </style>
