@@ -18,7 +18,7 @@
     
 <script>
     import Swiper from 'swiper'
-    import 'swiper/dist/css/swiper.css'
+    import '../../css/swiper.css'
     export default {
         name: "pictureShow",
         data () {
@@ -28,8 +28,9 @@
         },
         mounted() {
             new Swiper('.swiper-container', {
-                pagination: {
+                 pagination :{
                     el: '.swiper-pagination',
+                    clickable :true
                 },
                 loop: true
             });
