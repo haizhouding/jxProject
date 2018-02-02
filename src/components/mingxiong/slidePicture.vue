@@ -2,7 +2,7 @@
         <div class="swiper-container slidePicture">
             <div class="swiper-wrapper">
                 <div class="swiper-slide" 
-                v-for="img in imgList" :key="img">
+                v-for="img in imgList" :key="img.id">
                 <img :src="img.proImg" alt="">
                 <p>{{ img.proName }}</p>
                 <p>￥{{ img.proPrice | keepDecimal }}</p>

@@ -6,7 +6,7 @@
             </div>
         </div>
         <div class="swiper-pagination">
-            
+
         </div>
     </div>
 
@@ -58,7 +58,7 @@ export default {
         display: flex;
     }
     .slideShow div img {
-        width: 10rem;
+        width: 100%;
         height: 4.8rem;
     }
 </style>
