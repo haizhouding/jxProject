@@ -17,6 +17,7 @@ import cart from '../components/haizhou/cart.vue'
 
 
 export default new Router({
+  mode: 'history',
   routes: [
     {path: '/mine', component: mine},
     {path: '/home', component: home},

@@ -1,17 +1,17 @@
 <template>
-    <div id="coupon">
-        <div class="cou">
+    <div id="coupon" >
+        <div class="cou" @click="show">
             领券
             <span>满1299减70</span>
             <span>满129减70</span>
             <span>满199减70</span>
             <i>&gt;</i>
         </div>
-        <div class="cou_info">
-          <h3>优惠券 <span>X</span></h3>
+        <div class="cou_info" :class="{show: isShow}">
+          <h3>优惠券 <span @click="hidden">X</span></h3>
           <p>可用优惠券</p>
           <ul>
-              <li v-for="num in 3" class="couSum">
+              <li v-for="num in 3" class="couSum" :key="num.id">
                   <div class="right">
                       <p><span>￥</span>79</p>
                       <p>满1299元可用</p>
@@ -31,20 +31,31 @@ export default {
     name: "coupon",
     data () {
         return {
-             
+             isShow: true
         };
+    },
+    methods: {
+        show() {
+             this.isShow = false;
+        },
+        hidden() {
+            this.isShow = true;
+        }
+       
     }
 }
 </script>
     
 <style lang="css" scoped>
+
     #coupon .cou{
         width: 100%;
         height: 1.12rem;
         line-height: 1.12rem;
         padding-left: .266667rem;
-        background: url()
     }
+ 
+   
     #coupon .cou span{
         display: inline-block;
         height: .48rem;
@@ -74,10 +85,16 @@ export default {
     }
     #coupon .cou_info {
         width: 100%;
-        height: 10rem;
-        background: pink;
+        height: 14.266667rem;
         padding:0.1px .266667rem;
+        background: #fff;
         color: #666666;
+        position: fixed;
+        bottom: 0;
+        z-index: 999;
+    }
+    .show {
+        top: -17.813333rem;
     }
      #coupon .cou_info h3 {
          font-size: .426667rem;
@@ -91,6 +108,18 @@ export default {
       }
       #coupon .cou_info .couSum{
           clear: both;
+          margin-top: .266667rem;
+          border-top: 1px solid #e8e8e8;
+          border-bottom: 1px solid #e8e8e8;
+          border-right: 1px solid #e8e8e8;
+          border-radius: .133333rem;
+      }
+      #coupon .cou_info .couSum:after{
+        content: ".";
+        display: block;
+        clear: both;
+        visibility: hidden;
+        height: 0;
       }
       #coupon .cou_info .couSum .right{
           height: 2.666667rem;
@@ -110,4 +139,34 @@ export default {
       #coupon .couSum .right p:first-child span {
           font-size: .266667rem;
       }
+       #coupon .couSum .left {
+           float: right;
+           width: 6.32rem;
+           height: 2.613333rem;
+       }
+       #coupon .couSum .left p:first-child{
+           width: 4.933333rem;
+           line-height: .48rem;
+           margin-top: .133333rem;
+       }
+        #coupon .couSum .left p:first-child span{
+            display: inline-block;
+            background:#7fa4f0;
+            height: .34rem;
+            line-height: .34rem;
+            color: #fff;
+        }
+        #coupon .couSum .left p:last-child {
+            color: #9d9d9d;
+            margin-top: .666667rem;
+            line-height: .586667rem;
+        }
+        #coupon .couSum .left p:last-child a{
+            display: inline-block;
+            padding: 0 .133333rem;
+            border: .053333rem solid #729aed;
+            border-radius: .333333rem;
+            margin-left: .133333rem;
+
+        }
 </style>
