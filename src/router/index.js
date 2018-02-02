@@ -5,7 +5,15 @@ Vue.use(Router)
 import mine from '../components/zengjian/mine'
 import home from '../components/mingxiong/Home.vue'
 import types from '../components/yaowu/types.vue'
+//跳到商品列表
+
+import list from '../components/yaowu/BarList.vue'
+
 import cart from '../components/haizhou/cart.vue'
+
+
+
+
 
 
 export default new Router({
@@ -14,6 +22,7 @@ export default new Router({
     {path: '/home', component: home},
     {path: '', component: home},
     {path: '/types', component: types},
-    {path: '/cart', component: cart}
+    {path: '/cart', component: cart},
+    {path: '/list', component: list},
   ]
 })

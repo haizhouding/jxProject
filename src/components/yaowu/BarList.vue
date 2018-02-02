@@ -2,30 +2,30 @@
     <div>
        <div class="nav_top">
             <a href="javascript:;" @click='back'><img src="https://m.jiuxian.com/mjava_statics/images/headBack.jpg"></a>
-            <a href="javascript:;"><span>{{msg}}</span></a>
-            <a href="javascript:;" @click="showFn"></a>
+            <a href="javascript:;"><span>商品列表</span></a>
+            <a href="javascript:;" @click="showFn">筛选</a>
         </div>
-        <Bar-Sort-Navm :is_show="is"></Bar-Sort-Navm>
+        <Bar-List-More></Bar-List-More>
     </div>
 </template>
     
 <script>
-import BarSortNavm from './BarSortNavm.vue'
+
+import BarListMore from './barSort/BarListMore.vue'
 
 export default {
-    name: "BarSortTop",
+    name: "BarList",
     data () {
         return {
-            is:false,
+            is:true
         };
     },
-    props:['msg'],
     components: {
-         BarSortNavm
+         BarListMore
     },
     methods:{
         showFn(){
-            this.is = !this.is;
+            // this.is = !this.is;
         },
         //返回上一层 
         back() {
@@ -52,10 +52,11 @@ export default {
         height: .8rem;
     }
     .nav_top>a:nth-of-type(3){
-        width: .666667rem;
-        height: 1.066667rem;
+        width: 1.466667rem;
+        color: white;
+        /* height: 1.066667rem;
         background: url(https://m.jiuxian.com/mjava_statics/images/headIcon.png) no-repeat -4.24rem 0.2rem;
-        background-size:5.573333rem 1.093333rem; 
+        background-size:5.573333rem 1.093333rem;  */
     }
      span{
         color: white;
