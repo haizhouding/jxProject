@@ -34,7 +34,8 @@
                     el: '.swiper-pagination',
                     clickable :true
                 },
-                loop: true
+                loop: true,
+                observe: true
             });
         },
         props:['pictureList']

@@ -1,6 +1,10 @@
 <template>
     <div class="pictureList">
+<<<<<<< HEAD
        <a href="#" v-for="img in imgList[id]" :key="img">
+=======
+       <a href="#" v-for="img in imgList[id]" :key="img.id">
+>>>>>>> 18572365f6c37cab7231ec70333a82afa66b971e
            <img :src="img">
        </a>
     </div>

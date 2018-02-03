@@ -1,0 +1,80 @@
+{
+	"totalEval": 2352,
+	"goodEval": "99",
+	"proEvalList": [{
+		"evaId": 6148867,
+		"userName": "清***漪",
+		"clubUser": false,
+		"content": "年底发货也很快，收到货也很快。就看了还不错，品尝后在来说说,包装给力,送货快,品质好酒,老牌名酒,多次购买",
+		"star": 5,
+		"createTime": "2018-02-02 11:29:47",
+		"imageList": [{
+			"bigImage": "http://img10.jiuxian.com/eva//2018/0202/87c4dfa2e7ec4a0c8c974941d68c1b55.jpg",
+			"smallImage": "http://img10.jiuxian.com/eva//2018/0202/87c4dfa2e7ec4a0c8c974941d68c1b55.jpg"
+		}, {
+			"bigImage": "http://img09.jiuxian.com/eva//2018/0202/6205336bb0bc46db8b6cfcccb91fa4cd.jpg",
+			"smallImage": "http://img09.jiuxian.com/eva//2018/0202/6205336bb0bc46db8b6cfcccb91fa4cd.jpg"
+		}]
+	}, {
+		"evaId": 6139029,
+		"userName": "j***7",
+		"clubUser": false,
+		"content": "物流太慢了,包装给力",
+		"star": 5,
+		"createTime": "2018-02-01 09:22:20",
+		"imageList": [{
+			"bigImage": "http://img07.jiuxian.com/eva//2018/0201/951a54621ca64410a76a873911a8cddf.jpg",
+			"smallImage": "http://img07.jiuxian.com/eva//2018/0201/951a54621ca64410a76a873911a8cddf.jpg"
+		}]
+	}, {
+		"evaId": 6129384,
+		"userName": "从善如流",
+		"clubUser": false,
+		"content": "酒收了，還沒喝。,包装给力,送货快,老牌名酒",
+		"star": 5,
+		"createTime": "2018-02-01 00:41:42",
+		"imageList": [{
+			"bigImage": "http://img07.jiuxian.com/eva//2018/0201/e95711e378894a2c8d34b5111c4aa223.jpg",
+			"smallImage": "http://img07.jiuxian.com/eva//2018/0201/e95711e378894a2c8d34b5111c4aa223.jpg"
+		}]
+	}, {
+		"evaId": 6128373,
+		"userName": "随***缘",
+		"clubUser": false,
+		"content": "酒还不错。价格还行。平时喝。,包装给力,送货快,品质好酒",
+		"star": 5,
+		"createTime": "2018-01-31 18:11:39",
+		"imageList": [{
+			"bigImage": "http://img06.jiuxian.com/eva//2018/0131/8eb5964b408440bca80d2dab954f384f.jpg",
+			"smallImage": "http://img06.jiuxian.com/eva//2018/0131/8eb5964b408440bca80d2dab954f384f.jpg"
+		}, {
+			"bigImage": "http://img07.jiuxian.com/eva//2018/0131/72444357efe14f08828fb210f7cfc79f.jpg",
+			"smallImage": "http://img07.jiuxian.com/eva//2018/0131/72444357efe14f08828fb210f7cfc79f.jpg"
+		}, {
+			"bigImage": "http://img07.jiuxian.com/eva//2018/0131/345e0b90f59d444ca06c85b18772fbd2.jpg",
+			"smallImage": "http://img07.jiuxian.com/eva//2018/0131/345e0b90f59d444ca06c85b18772fbd2.jpg"
+		}]
+	}, {
+		"evaId": 6127362,
+		"userName": "jxw24330060",
+		"clubUser": false,
+		"content": "感觉不像真的啊",
+		"star": 5,
+		"createTime": "2018-01-31 12:25:48",
+		"imageList": [{
+			"bigImage": "http://img07.jiuxian.com/eva//2018/0131/34b68798a16d4a129bd9fd0114d384d3.jpg",
+			"smallImage": "http://img07.jiuxian.com/eva//2018/0131/34b68798a16d4a129bd9fd0114d384d3.jpg"
+		}]
+	}, {
+		"evaId": 6116028,
+		"userName": "泉水",
+		"clubUser": false,
+		"content": "物流超速的快，不错。",
+		"star": 5,
+		"createTime": "2018-01-30 23:05:31",
+		"imageList": [{
+			"bigImage": "http://img06.jiuxian.com/eva//2018/0130/090056d29e594959ac3a8e07004dd849.jpg",
+			"smallImage": "http://img06.jiuxian.com/eva//2018/0130/090056d29e594959ac3a8e07004dd849.jpg"
+		}]
+	}]
+}
