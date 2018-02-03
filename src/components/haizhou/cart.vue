@@ -13,8 +13,9 @@
             <p class="stripe"></p>
             <coupon></coupon>
             <p class="stripe"></p>
-            <p class="coins">金币 <span>赠送<i>99</i>个金币</span></p>
-            
+            <p class="coins">金币 <span>赠送<i>99</i>个金币</span></p>  
+            <p class="stripe"></p>            
+            <district></district>    
         </div>  
     </div>
 </template>
@@ -25,6 +26,7 @@ import HeaderBar from '../yaowu/barSort/barSortTop/BarSortTop.vue'
 import downLoad from './downLoad'
 import PictureShow from './PictureShow'
 import coupon from './coupon'
+import district from './district'
 
 export default {
     name: "cart",
@@ -83,7 +85,8 @@ export default {
         HeaderBar,
         downLoad,
         PictureShow,
-        coupon
+        coupon,
+        district
     }
 }
 </script>
@@ -134,9 +137,18 @@ export default {
     #details .stripe {
         height: .213333rem;
         width: 100%;
-        background: #f3f5f6;
+        background:#f3f5f6;
     }
     #details .coins{
-        
+        height: 1.2rem;
+        line-height: 1.2rem;
+        padding-left: .266667rem;
+    }
+    #details .coins span{
+        margin-left: .746667rem;
+    }
+    #details .coins span i{
+        font-style: normal;
+        color: red;
     }
 </style>
