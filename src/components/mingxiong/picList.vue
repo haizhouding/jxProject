@@ -1,12 +1,12 @@
 <template>
     <div class="picList">
        <div>
-           <a href="#" v-for="value in imgList1">
+           <a href="#" v-for="value in imgList1" :key="value">
                <img v-bind:src="value" alt="">
            </a>
        </div>
         <div>
-           <a href="#" v-for="value in imgList2">
+           <a href="#" v-for="value in imgList2" :key="value">
                <img v-bind:src="value" alt="">
            </a>
        </div>

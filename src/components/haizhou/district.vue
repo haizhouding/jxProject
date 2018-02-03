@@ -1,0 +1,90 @@
+<template>
+    <div id="district">
+       <div class="num"><span>数量</span> <p><span @click="reduce"> -</span><b>{{num}}</b><span @click="add">+</span></p></div>
+        <div class="regions">
+            <p>送至<span class="pro">北京</span>
+            <span class="city">大兴区</span>
+            <span class="town">枣园</span></p>
+            <p class="has">有货</p>
+        </div>
+    </div>
+
+</template>
+<script>
+import regions from './regions.json'
+export default {
+    name: "district",
+    data () {
+        return {
+            num: 1
+        };
+    },
+    methods: {
+        reduce() {
+            if (this.num > 1) {
+                this.num -= 1;
+                console.log(regions)
+            }
+        },
+        add() {
+            this.num += 1;
+        }
+    }
+}
+</script>
+<style lang="css" scoped>
+    #district{
+        padding-left: .266667rem;
+    }
+    #district .num{
+        margin-top: .266667rem;
+        height: .666667rem;
+        line-height: .666667rem;
+    }
+    #district .num >span{
+        float: left;
+        margin-right: .693333rem;
+    }
+    #district .num p{
+        float: left;
+        border: 1px solid #e8e8e8;
+    }
+    #district .num p span{
+        display: inline-block;
+        text-align: center;
+        width: .533333rem;
+    }
+    #district .num p span:first-of-type{
+        border-right: 1px solid #e8e8e8;
+    }
+     #district .num p span:last-of-type{
+        border-left: 1px solid #e8e8e8;
+    }
+    #district .num p b{
+        display: inline-block;
+        width: .906667rem;
+        text-align: center;
+        
+    }
+    #district .regions {
+        clear: both;
+        margin-top: .666667rem;
+        
+    }
+    #district .regions p:first-of-type{
+        background: url()
+    }
+
+    #district .regions .pro {
+        display: inline-block;
+        margin-left: .4rem;
+    }
+    #district .regions span{
+        margin-right: .133333rem;
+    }
+    #district .regions .has{
+        text-indent: 1.146667rem;
+        color: red;
+        font-size: .293333rem;
+    }
+    </style>

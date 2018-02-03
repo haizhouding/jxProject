@@ -1,19 +1,19 @@
 <template>
-   <div id="PictureShow">
-        <div class="swiper-container">
+        <div class="swiper-container slidePicture">
             <div class="swiper-wrapper">
                 <div class="swiper-slide" 
-                v-for="num in 10" :key="num">{{ num }}</div>
+                v-for="img in imgList" :key="img.id">
+                <img :src="img.proImg" alt="">
+                <p>{{ img.proName }}</p>
+                <p>￥{{ img.proPrice | keepDecimal }}</p>
+                <p>￥{{ img.jxPrice | keepDecimal }}</p>
+                </div>
             </div>
-    <!-- Add Pagination -->
-             <div class="swiper-pagination"></div>
         </div>
-    </div>
-    
+     
 </template>
 <script>
-import Swiper from 'swiper'
-import 'swiper/dist/css/swiper.css'
+
 export default {
     name: "slidePictrue",
     data () {
@@ -34,23 +34,31 @@ export default {
         }
     },
     mounted() {
-      new Swiper('.swiper-container', {
-                pagination: {
-                    el: '.swiper-pagination',
-                },
-                loop: true
-            });
+        
     },
 }
 </script>
 <style lang="css" scoped>
-    .slidePicture {
+    .slidePicture>div {
         width: 29.333333rem;
     }
-    .slidePicture div{
+    .slidePicture>div>div {
         width: 2.933333rem;
     }
-    .slidePicture img {
+    img{
         width: 2.933333rem;
+    }
+    p {
+       
+    }
+    p:nth-of-type(1) {
+        color: #252525;
+    }
+    p:nth-of-type(2) {
+        color: #fc5a5a;
+    }
+    p:nth-of-type(3) {
+        color: #999999;
+        text-decoration: line-through;
     }
 </style>

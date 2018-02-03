@@ -4,7 +4,7 @@
        <form action="" class='form1'>
             <div class='Bdiv'>
                 <span></span>
-                <input type="text" placeholder="请输入手机号">
+                <input type="text" placeholder="账号绑定的手机号">
             </div>
             <div class='Sdiv'>
                 <input type="text" placeholder="验证码"><b></b><b>换一张</b>
@@ -13,17 +13,7 @@
                 <input type="text" placeholder="请输入校验码">
                 <button>获取校验码</button>	
             </div>
-            <div class='Bdiv'>
-                <span></span>
-                <input type="password" placeholder="请输入密码">
-            </div>
-            <div class='Bdiv'>
-                <span></span>
-                <input type="password" placeholder="再次输入密码">
-            </div>
-            
-            
-            <button class='button'>确认注册</button>  
+            <button class='button'>修改密码</button>  
 	    </form>
     </div>
 </template>
@@ -35,7 +25,7 @@ export default {
     name: "RegistrationPage",
     data() {
       return {
-        msg: '用户注册',
+        msg: '找回密码',
       }
     },
      components: {
@@ -53,10 +43,10 @@ export default {
         width:.8rem;
     }
     .form1 div{
-        height:.986667rem
+        height:.886667rem
     }
   .form1{
-      height:10.506667rem;
+      height:7.006667rem;
      padding: 0 .6rem;
      display:flex;
     justify-content: space-around;
