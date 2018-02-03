@@ -42,6 +42,7 @@ export default {
                 clickable :true
             },
             loop: true,
+            observe: true
         });
     },
     methods: {

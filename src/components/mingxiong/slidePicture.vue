@@ -48,9 +48,6 @@ export default {
     img{
         width: 2.933333rem;
     }
-    p {
-       
-    }
     p:nth-of-type(1) {
         color: #252525;
     }

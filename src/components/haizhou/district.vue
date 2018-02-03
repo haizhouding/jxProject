@@ -4,9 +4,12 @@
         <div class="regions">
             <p>送至<span class="pro">北京</span>
             <span class="city">大兴区</span>
-            <span class="town">枣园</span></p>
+            <span class="town">枣园</span>
+            <b></b></p>
             <p class="has">有货</p>
         </div>
+        <div class="fee">运费 <span>店铺单笔订单不满86元，在线支付运费9元</span></div>
+        <div class="fee">提示 <span>每购买两瓶送原厂手提袋</span></div>
     </div>
 
 </template>
@@ -35,6 +38,8 @@ export default {
 <style lang="css" scoped>
     #district{
         padding-left: .266667rem;
+        padding-right: .373333rem;
+
     }
     #district .num{
         margin-top: .266667rem;
@@ -71,9 +76,17 @@ export default {
         margin-top: .666667rem;
         
     }
-    #district .regions p:first-of-type{
-        background: url()
-    }
+   
+     #district .regions p:first-of-type b{
+         display: inline-block;
+         height: .266667rem;
+         width: .266667rem;
+         /* background: red; */
+        background: url(https://m.jiuxian.com/mjava_statics/images/goods/catIcon.png) -3.52rem -1.12rem no-repeat;
+        background-size: 4rem 4rem;
+        float: right;
+         
+     }
 
     #district .regions .pro {
         display: inline-block;
@@ -86,5 +99,16 @@ export default {
         text-indent: 1.146667rem;
         color: red;
         font-size: .293333rem;
+        margin-bottom: .48rem;
     }
+    #district .fee{
+        height: .96rem;
+        color: #666666;
+    }
+    #district .fee span{
+        margin-left: .693333rem;
+        color: black;
+    }
+   
+
     </style>
