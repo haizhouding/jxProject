@@ -5,21 +5,20 @@
             <a href="javascript:;"><span>商品列表</span></a>
             <a href="javascript:;" @click="showFn">筛选</a>
         </div>
-        <Bar-List-More></Bar-List-More>
-        <Element></Element>
+        <Bar-List-More :message='message'></Bar-List-More>
+
     </div>
 </template>
     
 <script>
 
 import BarListMore from './barSort/BarListMore.vue'
-import Element from './barSort/element/Element.vue'
-
 export default {
     name: "BarList",
     data () {
         return {
-            is:true
+            is:true,
+            message:this.$route.params.barName
         };
     },
     components: {
@@ -35,7 +34,7 @@ export default {
             // history.back()
             this.$router.go(-1)
         }
-    }
+    },
 }
 </script>
     

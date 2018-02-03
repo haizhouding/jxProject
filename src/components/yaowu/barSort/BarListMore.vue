@@ -18,7 +18,7 @@
                             </p>
                             <p>
                                 <span>98%好评</span>
-                                <span>5567人评论</span>
+                                <span>5567人评论{{message}}</span>
                             </p>
                         </div>
                     </figcaption>
@@ -28,12 +28,25 @@
 </template>
     
 <script>
+
 export default {
     name: "BarListMore",
     data () {
         return {
              
         };
+    },
+    props:['message'],
+    mounted(){
+       this.axios.get('http://10.0.157.231:8888/getMessage', {
+            params: {
+                pageNum:1
+            }
+        })
+        .then(function (response) {
+            console.log(response.data);
+            // success(response);
+        })
     }
 }
 </script>
@@ -41,7 +54,6 @@ export default {
 <style lang="css" scoped>
     li{
         height: 3.2rem;
-       
     }
     h5{
          margin: 0;

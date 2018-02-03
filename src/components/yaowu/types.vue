@@ -2,18 +2,9 @@
 <div>
     <Bar-Sort></Bar-Sort>
     <div class="table_t">
-        <router-link to='/list'><a href="#">白酒</a></router-link>
-        <a href="#">葡萄酒</a>
-        <a href="#">洋酒</a>
-        <a href="#">整箱购</a>
-        <a href="#">老酒</a>
-        <a href="#">清仓特卖</a>
-        <a href="#">海外直采</a>
-        <a href="#">精美大坛</a>
-        <a href="#">红酒整箱</a>
-        <a href="#">值得买</a>
-        <a href="#">销量排行</a>
-       <a href="#">礼尚往来</a>
+        <router-link :to="'/list/' + prop" v-for='prop in props' :key='prop.id'>
+            <a href="#" >{{prop}}</a>
+        </router-link>
     </div>
 </div>
    
@@ -24,12 +15,14 @@
     export default {
         data() {
             return {
-           
+                props:["白酒","葡萄酒","洋酒",'整箱购','老酒','清仓特卖','海外直采'
+                ,'精美大坛','红酒整箱','值得买','销量排行','礼尚往来']
             }
         },
         components: {
             BarSort
         },
+       
     }
 </script>
 <style lang="css" scoped>

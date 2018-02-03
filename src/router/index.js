@@ -26,7 +26,7 @@ export default new Router({
     {path: '', component: home},
     {path: '/types', component: types},
     {path: '/cart', component: cart},
-    {path: '/list', component: list},
+    {path: '/list/:barName', component: list},
     {path: '/RegistrationPage', component: RegistrationPage},
     {path: '/BackPsd', component: BackPsd},
     
