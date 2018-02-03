@@ -19,7 +19,8 @@
        <headline-img-two :index="3"></headline-img-two>     
        <headline-list :id="5"></headline-list>   
        <headline-img-three></headline-img-three>
-       <h4>爆款推荐</h4>            
+       <h4>爆款推荐</h4>    
+       <message :imgList="imgList"></message>
     </div>
 </template>
 <script>
@@ -33,11 +34,12 @@ import headlineList from './headlineList'
 import headlineImgOne from './headlineImgOne'
 import headlineImgTwo from './headlineImgTwo'
 import headlineImgThree from './headlineImgThree'
-
+import message from './message'
 export default {
     name: "Home",
     data () {
         return {
+            imgList: null,
             pictureList: {
                 width: '10rem',
                 height: '4.8rem',
@@ -55,6 +57,21 @@ export default {
             }
         }
     },
+    mounted () {
+       window.addEventListener('scroll', this.handleScroll)
+    },
+    methods: {
+       handleScroll () {
+    //         var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+    //         console.log(scrollTop)
+    //         if (scrollTop > 3100) {
+                this.axios.get("http://10.0.157.231:8888/getMessage?pageNum=1")
+                .then(res => {
+                    this.imgList = res.data.promoList
+                })
+    //         }
+       }
+    },
     components: {
         PictureShow,
         picList,
@@ -65,7 +82,8 @@ export default {
         headlineList,
         headlineImgOne,
         headlineImgTwo,
-        headlineImgThree
+        headlineImgThree,
+        message
     }
 }
 </script>

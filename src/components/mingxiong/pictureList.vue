@@ -1,6 +1,6 @@
 <template>
     <div class="pictureList">
-       <a href="#" v-for="img in imgList[id]">
+       <a href="#" v-for="img in imgList[id]" :key="img">
            <img :src="img">
        </a>
     </div>
