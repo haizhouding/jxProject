@@ -6,7 +6,7 @@
             <div class="middle">
                 <p>朗格玛缔官方旗舰店</p>
                 <div>【点我抢购】新年囤好货-</div>
-            </div>   
+            </div>  
             
         </a>
        
