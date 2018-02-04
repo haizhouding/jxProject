@@ -35,6 +35,7 @@ export default {
         padding-left: .4rem;
         display: flex;
         align-items: center;
+        justify-content: space-between;
     }
     #downLoad .close{
         display: inline-block;
@@ -59,12 +60,10 @@ export default {
         color: #fc5a5a;
     }
     #downLoad button{
-        float: right;
         background: #fc5a5a;
         width: 1.76rem;
         height: 1.146667rem;
         border: none;
         color: white;
-        margin-left: 1.06rem;
     }
 </style>

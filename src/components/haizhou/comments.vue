@@ -15,7 +15,7 @@
     </div>
 </template>
 <script>
-    import comments from './comments.json'
+    import productLists from './json/product.json'
     export default {
         name: "comments",
         data () {
@@ -24,8 +24,13 @@
             };
         },
         created() {
-            this.commentsList = comments;
-        }
+            for (var product of productLists) {
+                if( product.productId == 46890) {
+                    this.commentsList = product.comments;
+                }
+            }
+        },
+        props: ['productId']
     }
 </script>
 <style lang="css" scoped>

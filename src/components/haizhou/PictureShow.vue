@@ -8,23 +8,24 @@
                 :style="{backgroundImage: 'url(' + src + ')',
                 backgroundSize: pictureList.width + ',' + pictureList.height,
                 width: pictureList.width ,
-                height: pictureList.height}"></div>
+                height: pictureList.height}">
+                </div>
             </div>
     <!-- Add Pagination -->
              <div class="swiper-pagination"></div>
         </div>
     </div>
 </template>
-    
 <script>
+    import productLists from './json/product.json'
     import Swiper from 'swiper'
     import '../../css/swiper.css'
     export default {
         name: "pictureShow",
         data () {
             return {
-                
-            };
+                pictureList: null
+            }
         },
         mounted() {
             new Swiper('.swiper-container', {
@@ -36,7 +37,14 @@
                 observe: true
             });
         },
-        props:['pictureList']
+        created() {
+            for (var product of productLists) {
+                if( product.productId == this.productId) {
+                    this.pictureList = product.pictureList;
+                }
+            }
+        },
+        props: ['productId']
     }
 </script>
     

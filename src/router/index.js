@@ -7,6 +7,7 @@ Vue.use(Router)
 import mine from '../components/zengjian/mine'
 import home from '../components/mingxiong/Home.vue'
 import types from '../components/yaowu/types.vue'
+import details from '../components/haizhou/details.vue'
 //跳到商品列表
 
 import list from '../components/yaowu/BarList.vue'
@@ -36,6 +37,6 @@ export default new Router({
     {path: '/list/:barName', component: list},
     {path: '/RegistrationPage', component: RegistrationPage},
     {path: '/BackPsd', component: BackPsd},
-    
+    {path: '/details', component: details}
   ]
 })
