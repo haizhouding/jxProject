@@ -21,6 +21,15 @@ import BackPsd from '../components/yaowu/BackPsd.vue'
 import One from '../components/zengjian/One'
 import Two from '../components/zengjian/Two'
 
+import contents from '../components/haizhou/contents.vue'
+import province from '../components/haizhou/province.vue'
+import city from '../components/haizhou/city.vue'
+import county from '../components/haizhou/county.vue'
+
+
+
+
+
 
 export default new Router({
   mode: 'history',
@@ -37,6 +46,12 @@ export default new Router({
     {path: '/list/:barName', component: list},
     {path: '/RegistrationPage', component: RegistrationPage},
     {path: '/BackPsd', component: BackPsd},
-    {path: '/details', component: details}
+    {path: '/details', component: details, children: [
+      {path:'', component: contents},
+      {path:'contents', component: contents},
+      {path:'province', component: province},
+      {path:'city:index', component: city},
+      {path:'county:index', component: county}
+    ]}
   ]
 })

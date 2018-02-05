@@ -1,26 +1,17 @@
 <template>
     <div id="district">
-       <div class="num"><span>数量</span> <p><span @click="reduce"> -</span><b>{{num}}</b><span @click="add">+</span></p></div>
-        <div class="regions" >
-            <p >送至<span class="pro">{{pro}}</span>
-            <span class="city">{{city}}</span>
-            <span class="town">{{county}}</span>
-            <b></b></p>
-            <p class="has">有货</p>
-        </div>
+        <div class="num"><span>数量</span> <p><span @click="reduce"> -</span><b>{{num}}</b><span @click="add">+</span></p></div>
+        <router-link to="/details/province"> 
+            <div class="regions">
+                <p>送至<span class="pro">{{pro}}</span>
+                <span class="city">{{city}}</span>
+                <span class="town">{{county}}</span>
+                <b></b></p>
+                <p class="has">有货</p>
+            </div>
+        </router-link>
         <div class="fee">运费 <span>店铺单笔订单不满86元，在线支付运费9元</span></div>
         <div class="fee">提示 <span>每购买两瓶送原厂手提袋</span></div>
-        <div class="region">
-            <ul>
-                <li v-for="pro in regionsList[1]" :key="pro.id" @click ="proFn(pro)">{{pro[1]}}</li>
-            </ul>
-            <ul>
-                <li v-for="city in cityList" :key="city.id" @click ="cityFn(city)">{{city[1]}}</li>
-            </ul>
-            <ul>
-                <li v-for="county in countyList" :key="county.id" @click="countyFn(county)">{{county[1]}}</li>
-            </ul>
-        </div>
     </div>
 </template>
 <script>
@@ -32,9 +23,6 @@ export default {
     data () {
         return {
             num: 1,
-            regionsList: [],
-            cityList: [],
-            countyList: [],
             pro: '江苏',
             city: '泰州',
             county: '兴化'
@@ -48,22 +36,7 @@ export default {
         },
         add() {
             this.num += 1;
-        },
-        proFn(pro) {
-            this.cityList = this.regionsList[pro[0]];
-            this.pro = pro[1]
-        },
-        cityFn(city) {
-            this.countyList = this.regionsList[city[0]];
-            this.city = city[1];
-        },
-        countyFn(county) {
-            this.county = county[1];
-        }
-        
-    },
-    created() {
-        this.regionsList = regions;
+        } 
     }
 }
 </script>
