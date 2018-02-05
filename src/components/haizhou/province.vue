@@ -22,7 +22,7 @@ export default {
     methods: {
         proFn(pro) {
             this.$router.push({ path: '/details/city' + pro[0] });
-            this.$store.dispatch('setTempPro', pro[1]);
+            this.$store.dispatch('setTempPro', pro[1]);ç
 
 
         },
