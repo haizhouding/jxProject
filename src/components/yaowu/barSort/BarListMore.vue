@@ -1,24 +1,22 @@
 <template>
-
         <ul>
-            <li>
+            <li v-for="(data, index) in datas" :key="data.id" :id = 'index'>
                 <figure>
-                    <img src="https://img06.jiuxian.com/2017/0615/9a7cfa2281624c8c964c89653501fa1c2.jpg" alt="">
+                    <img :src=data.commonProductInfo.imgPath alt="">
                     <figcaption>
                         <div>
-                            <h5>  50金角西风酒</h5>
+                            <h6>{{ data.commonProductInfo.pname }}</h6>
                             <p>
-2wefrs
+                               <span v-for="data1 in data.promo" :key="data1.id" :style="{'color':data1.wordColor,'background-color':data1.backColor}">{{data1.name}}</span>
                             </p>
                         </div>
                         <div>
                             <p>
-                                <span>￥49.5</span>
-                            
+                                ><b  class="ba_red">￥{{data.commonProductInfo.jxPrice}}</b>
                             </p>
                             <p>
-                                <span>98%好评</span>
-                                <span>5567人评论{{message}}</span>
+                                <span>98% 好评</span>
+                                <span>5567 人评论</span>
                             </p>
                         </div>
                     </figcaption>
@@ -33,20 +31,65 @@ export default {
     name: "BarListMore",
     data () {
         return {
-             
+           pageNum:0,
+           datas:[]
         };
     },
     props:['message'],
-    mounted(){
-       this.axios.get('http://10.0.157.231:8888/getMessage', {
+    created(){
+       this.axios.get('http://10.0.157.234:8888/getMessage', {
             params: {
-                pageNum:1
+                pageNum:0,  
             }
         })
-        .then(function (response) {
-            console.log(response.data);
-
+        .then(response => {
+            // console.log(response.data.promoList);
+            
+            for(var p of response.data.promoList){
+                if(this.datas.indexOf(p) == -1 ){
+                    this.datas.push(p);
+                }
+                
+            }
+        
         })
+        
+    },
+    mounted(){
+        window.addEventListener('scroll', this.handleScroll)
+    },
+    methods:{
+        
+        handleScroll() {
+            (() =>{
+                if(this.pageNum == 7){
+                    return;
+                }
+                this.pageNum += 1;
+                var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+                // console.log(scrollTop,"----"+document.body.scrollHeight)
+                if(document.body.scrollHeight - scrollTop - document.body.offsetHeight <30){
+               
+                    
+                this.axios.get('http://10.0.157.234:8888/getMessage', {
+                    params: {
+                        pageNum:this.pageNum
+                    }
+                })
+                .then(response => {
+                    // this.datas = this.datas.concat(response.data.promoList)
+                    for(var p of response.data.promoList){
+                        if(this.datas.indexOf(p) == -1 ){
+                            this.datas.push(p);
+                        }
+                
+                    }
+                    // console.log(this.$data);
+                   
+                });
+              }   
+            })();   
+        }
     }
 }
 </script>
@@ -55,7 +98,7 @@ export default {
     li{
         height: 3.2rem;
     }
-    h5{
+    h6{
          margin: 0;
         padding: 0;
         line-height: .533333rem;
@@ -69,16 +112,27 @@ export default {
         box-sizing: border-box;
          display: flex;
         font-size: .32rem;
+        height:3.2rem;
     }
     figure>img{
-        height: 3.2rem;
-        width: 2.933333rem;
+        height:3.2rem;
+        width:2.3rem;
+        margin: 0 .266667rem 0 .4rem;
     }
     figcaption{
         width: 7.066667rem;
         display: flex;
+        height:3.2rem;
         flex-direction:column;
         justify-content: space-around;
         border-bottom:1px solid #e8e8e8;
+    }
+    .ba_red{
+        color: red;
+    }
+    span{
+        border-radius: .053333rem;
+        padding: 0 .08rem; 
+        margin-right: .133333rem;
     }
 </style>

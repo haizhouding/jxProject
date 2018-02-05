@@ -5,8 +5,7 @@
             <a href="javascript:;"><span>商品列表</span></a>
             <a href="javascript:;" @click="showFn">筛选</a>
         </div>
-        <Bar-List-More :message='message'></Bar-List-More>
-
+        <Bar-List-More :message='message' class="top_p"></Bar-List-More>
     </div>
 </template>
     
@@ -39,6 +38,9 @@ export default {
 </script>
     
 <style lang="css" scoped>
+    .top_p{
+        padding-top: 1.066667rem;
+    }
     .nav_top{
         width: 100%;
         height: 1.066667rem;
@@ -47,6 +49,7 @@ export default {
         line-height: 1.066667rem;
         background-color:#de4943 ;
         justify-content: space-between;
+        position: fixed;
     }
     .nav_top img{
         margin-left:.266667rem; 
