@@ -12,8 +12,8 @@ import details from '../components/haizhou/details.vue'
 
 import list from '../components/yaowu/BarList.vue'
 import cart from '../components/haizhou/cart.vue'
-import RegistrationPage from '../components/yaowu/RegistrationPage.vue'
-import BackPsd from '../components/yaowu/BackPsd.vue'
+
+
 
 
 //跳到注册页面
@@ -44,6 +44,12 @@ export default new Router({
     {path: '/types', component: types},
     {path: '/cart', component: cart},
     {path: '/list/:barName', component: list},
+<<<<<<< HEAD
+=======
+    
+    {path: '/RegistrationPage', component: RegistrationPage},
+    {path: '/BackPsd', component: BackPsd},
+>>>>>>> 3848e8857279a86a778a9c6842b452aa41db94c4
     {path: '/details', component: details, children: [
       {path:'', component: contents},
       {path:'contents', component: contents},
