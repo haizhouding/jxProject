@@ -1,8 +1,8 @@
 <template>
     <div class="message">
-        <div v-for="pic in imgList" :key="pic.id">
+        <div v-for="(pic, index) in imgList" :key="pic.id" :id="index">
             <p>
-                <span v-for="value in pic.promo" :key="value" v-if="value.name"
+                <span v-for="value in pic.promo" :key="value.id" v-if="value.name"
                 :style="{
                     backgroundColor: value.backColor,
                     color: value.wordColor
@@ -22,7 +22,7 @@ export default {
     name: "message",
     data () {
         return {
-
+            
         };
     },
     directives: {
@@ -47,7 +47,7 @@ export default {
 <style lang="css" scoped>
     .message {
         background-color: #f3f5f6;
-        height: 37.333333rem;
+        overflow: hidden;
     }
     .message>div{
         float: left;
@@ -64,7 +64,7 @@ export default {
     }
     .message>div>p:nth-of-type(1) span {
         margin-top: .133333rem;
-        margin-left: .133333rem;
+        margin-left: .103333rem;
         line-height: .48rem;
         height: .48rem;
         text-align: center;

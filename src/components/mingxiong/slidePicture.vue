@@ -23,7 +23,7 @@ export default {
         };
     },
     created() {
-        this.axios.get("http://10.0.157.231:8888/getMiaopai")
+        this.axios.get("http://10.0.157.234:8888/getMiaopai")
             .then(res => {
                 this.imgList = res.data.killProList
             })
