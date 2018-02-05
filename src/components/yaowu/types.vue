@@ -2,9 +2,7 @@
 <div>
     <Bar-Sort></Bar-Sort>
     <div class="table_t">
-        <router-link :to="'/list/' + prop" v-for='prop in props' :key='prop.id'>
-            <a href="#" >{{prop}}</a>
-        </router-link>
+        <a href="javascript:;" @click='mFn(index)' v-for="(prop, index) in props" :key="prop.id">{{ prop }}</a>
     </div>
 </div>
    
@@ -18,6 +16,15 @@
                 props:["白酒","葡萄酒","洋酒",'整箱购','老酒','清仓特卖','海外直采'
                 ,'精美大坛','红酒整箱','值得买','销量排行','礼尚往来']
                 
+            }
+        },
+        methods:{
+             mFn(index){
+                this.values =  this.props[index];
+                setTimeout(() =>{
+                    this.$router.push("/list/ + this.values")
+                    //  <router-link  to="'/list/' + prop"  ></router-link>
+                },200)
             }
         },
         components: {

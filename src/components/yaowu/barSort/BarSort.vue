@@ -3,18 +3,12 @@
     <Bar-Sort-Top :msg='msg'></Bar-Sort-Top>    
     <div class="bgDiv">
         <div>
-            <input type="text" placeholder='茅台' @click="displayShow" ><span>搜索</span>
+            <input type="text" :placeholder="msg" @click="displayShow" v-model="values"><span @click='mFn'>搜索</span>
         </div>
         <div class="hotDiv" v-show='is_show'>
             <p>热门搜索：</p>
             <div class="hotA">
-                <a href="#">茅台</a>
-                <a href="#">五粮液</a>
-                <a href="#">泸州老窖</a>
-                <a href="#">剑南春</a>
-                <a href="#">酒鬼酒</a>
-                <a href="#">威士忌</a>
-                <a href="#">拉菲</a>                
+                <a href="javascript:;" @click='mFn(index)' v-for="(prop, index) in props" :key="prop.id">{{ prop }}</a>
             </div>
             <div class="emptry" @click="displayNone">
             </div>
@@ -32,7 +26,10 @@ export default {
     data () {
         return {
              msg:'选酒',
-             is_show:false
+             is_show:false,
+             msg:'茅台',
+             values:"",
+             props:["茅台","五粮液","泸州老窖",'剑南春','酒鬼酒','威士忌','拉菲']
         };
     },
     components: {
@@ -44,6 +41,12 @@ export default {
         },
         displayNone(){
             this.is_show = false;
+        },
+        mFn(index){
+            this.values =  this.props[index];
+            setTimeout(() =>{
+                this.$router.push("/list/ + this.values")
+            },300)
         }
     }
 }

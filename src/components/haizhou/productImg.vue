@@ -20,7 +20,7 @@
     </div>
 </template>
 <script>
-import imgObj from './imgObj.json'
+import productLists from './json/product.json'
 export default {
     name: "productImg",
     data () {
@@ -29,8 +29,11 @@ export default {
         };
     },
     created() {
-        console.log(imgObj)
-        this.img = imgObj;
+         for (var product of productLists) {
+            if( product.productId == 46890) {
+                this.img = product.imgList;
+            }
+        }
     }
 }
 </script>
@@ -59,5 +62,8 @@ export default {
         padding-left: .266667rem;
         color: #848484;
         line-height: .56rem;
+    }
+    #productImg img:last-child{
+        margin-bottom: 1.146667rem;
     }
 </style>

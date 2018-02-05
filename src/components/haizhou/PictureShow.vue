@@ -4,12 +4,11 @@
             <div class="swiper-wrapper ">
                 <div class="swiper-slide" 
                 v-for="src in pictureList.srcList" 
-                :key="src.id"
-                >            
-                <img :src="src" :style="{
-                   width: pictureList.width,
-                   height: pictureList.height
-                }" />
+                :key="src.id" 
+                :style="{backgroundImage: 'url(' + src + ')',
+                backgroundSize: pictureList.width + ',' + pictureList.height,
+                width: pictureList.width ,
+                height: pictureList.height}">
                 </div>
             </div>
     <!-- Add Pagination -->
@@ -17,16 +16,16 @@
         </div>
     </div>
 </template>
-    
 <script>
+    import productLists from './json/product.json'
     import Swiper from 'swiper'
     import '../../css/swiper.css'
     export default {
         name: "pictureShow",
         data () {
             return {
-                
-            };
+                pictureList: null
+            }
         },
         mounted() {
             new Swiper('.swiper-container', {
@@ -38,7 +37,14 @@
                 observe: true
             });
         },
-        props:['pictureList']
+        created() {
+            for (var product of productLists) {
+                if( product.productId == this.productId) {
+                    this.pictureList = product.pictureList;
+                }
+            }
+        },
+        props: ['productId']
     }
 </script>
     
