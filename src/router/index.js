@@ -44,9 +44,6 @@ export default new Router({
     {path: '/types', component: types},
     {path: '/cart', component: cart},
     {path: '/list/:barName', component: list},
-    
-    {path: '/RegistrationPage', component: RegistrationPage},
-    {path: '/BackPsd', component: BackPsd},
     {path: '/details', component: details, children: [
       {path:'', component: contents},
       {path:'contents', component: contents},
