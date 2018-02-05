@@ -1,6 +1,6 @@
 <template>
     <div class="Home">
-       <picture-show :pictureList="pictureList"></picture-show>
+       <pic-show :pictureList="pictureList"></pic-show>
        <pic-list></pic-list>
        <slide-picture></slide-picture>
        <picture-list :id="0"></picture-list>
@@ -20,11 +20,12 @@
        <headline-list :id="5"></headline-list>   
        <headline-img-three></headline-img-three>
        <h4>爆款推荐</h4>    
-       <message :imgList="imgList"></message>
+       <message :imgList='imgList'></message>
+       <home-footer></home-footer>
     </div>
 </template>
 <script>
-import PictureShow from '../haizhou/PictureShow'
+import picShow from './picShow'
 import picList from './picList'
 import slidePicture from './slidePicture'
 import pictureList from './pictureList'
@@ -35,11 +36,14 @@ import headlineImgOne from './headlineImgOne'
 import headlineImgTwo from './headlineImgTwo'
 import headlineImgThree from './headlineImgThree'
 import message from './message'
+import homeFooter from './homeFooter'
 export default {
     name: "Home",
     data () {
         return {
-            imgList: null,
+            imgList: [],
+            num: 0,
+            count: null,
             pictureList: {
                 width: '10rem',
                 height: '4.8rem',
@@ -58,22 +62,35 @@ export default {
         }
     },
     mounted () {
-       window.addEventListener('scroll', this.handleScroll)
+        window.addEventListener('scroll', this.menu)
+        
     },
     methods: {
-       handleScroll () {
-    //         var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
-    //         console.log(scrollTop)
-    //         if (scrollTop > 3100) {
-                this.axios.get("http://10.0.157.231:8888/getMessage?pageNum=1")
-                .then(res => {
-                    this.imgList = res.data.promoList
+        menu() {
+            var pageHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight)
+            var viewportHeight = window.innerHeight || document.body.clientHeight
+            var scrollTop =  window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+            if (pageHeight - viewportHeight - scrollTop < 20) {
+                if (this.num == this.count + 1) {
+                    return
+                }
+                this.axios.get("http://10.0.157.234:8888/getMessage", {
+                    params: {
+                        pageNum: this.num
+                    }
                 })
-    //         }
-       }
+                .then(res => {
+                    this.imgList = this.imgList.concat(res.data.promoList)
+                    this.count = Math.floor(res.data.totalCount / 10)
+                })
+                this.num += 1
+                
+            }
+                
+        }
     },
     components: {
-        PictureShow,
+        picShow,
         picList,
         slidePicture,
         pictureList,
@@ -83,14 +100,15 @@ export default {
         headlineImgOne,
         headlineImgTwo,
         headlineImgThree,
-        message
+        message,
+        homeFooter
     }
 }
 </script>
 <style lang="css" scoped>
     .Home{
         width: 10rem;
-        height: 366.373333rem;
+        padding-bottom: 1.146667rem;
         overflow: hidden;
     }
     .Home>h4 {

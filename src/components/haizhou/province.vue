@@ -1,7 +1,7 @@
 <template>
     <div id="province" @click="toDetails">
             <ul>
-                <li v-for="pro in regionsList[1]" :key="pro.id" @click.stop ="proFn(pro[0])">{{pro[1]}}</li>
+                <li v-for="pro in regionsList[1]" :key="pro.id" @click.stop ="proFn(pro)">{{pro[1]}}</li>
             </ul>
     </div>
 </template>
@@ -20,8 +20,11 @@ export default {
         this.regionsList = regions;
     },
     methods: {
-        proFn(num) {
-            this.$router.push({ path: '/details/city' + num });
+        proFn(pro) {
+            this.$router.push({ path: '/details/city' + pro[0] });
+            this.$store.dispatch('setTempPro', pro[1]);ç
+
+
         },
         toDetails() {
            this.$router.push('/details/')
