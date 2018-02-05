@@ -1,40 +1,50 @@
 <template>
     <div id="district">
-       <div class="num"><span>数量</span> <p><span @click="reduce"> -</span><b>{{num}}</b><span @click="add">+</span></p></div>
-        <div class="regions">
-            <p>送至<span class="pro">北京</span>
-            <span class="city">大兴区</span>
-            <span class="town">枣园</span></p>
-            <p class="has">有货</p>
-        </div>
+        <div class="num"><span>数量</span> <p><span @click="reduce"> -</span><b>{{num}}</b><span @click="add">+</span></p></div>
+        <router-link to="/details/province"> 
+            <div class="regions">
+                <p>送至<span class="pro">{{pro}}</span>
+                <span class="city">{{city}}</span>
+                <span class="town">{{county}}</span>
+                <b></b></p>
+                <p class="has">有货</p>
+            </div>
+        </router-link>
+        <div class="fee">运费 <span>店铺单笔订单不满86元，在线支付运费9元</span></div>
+        <div class="fee">提示 <span>每购买两瓶送原厂手提袋</span></div>
     </div>
-
 </template>
 <script>
-import regions from './regions.json'
+
+
+import regions from './json/regions.json'
 export default {
     name: "district",
     data () {
         return {
-            num: 1
+            num: 1,
+            pro: '江苏',
+            city: '泰州',
+            county: '兴化'
         };
     },
     methods: {
         reduce() {
             if (this.num > 1) {
                 this.num -= 1;
-                console.log(regions)
             }
         },
         add() {
             this.num += 1;
-        }
+        } 
     }
 }
 </script>
 <style lang="css" scoped>
     #district{
         padding-left: .266667rem;
+        padding-right: .373333rem;
+
     }
     #district .num{
         margin-top: .266667rem;
@@ -71,9 +81,16 @@ export default {
         margin-top: .666667rem;
         
     }
-    #district .regions p:first-of-type{
-        background: url()
-    }
+   
+     #district .regions p:first-of-type b{
+         height: .266667rem;
+         width: .266667rem;
+         /* background: red; */
+        background: url(https://m.jiuxian.com/mjava_statics/images/goods/catIcon.png) -3.52rem -1.12rem no-repeat;
+        background-size: 4rem 4rem;
+        float: right;
+         
+     }
 
     #district .regions .pro {
         display: inline-block;
@@ -86,5 +103,24 @@ export default {
         text-indent: 1.146667rem;
         color: red;
         font-size: .293333rem;
+        margin-bottom: .48rem;
     }
+    #district .fee{
+        height: .96rem;
+        color: #666666;
+    }
+    #district .fee span{
+        margin-left: .693333rem;
+        color: black;
+    }
+    #district .region {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 9999;
+    }
+
     </style>

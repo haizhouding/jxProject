@@ -1,10 +1,10 @@
 <template>
     <div class="headlineImgTwo">
-       <a href="#" v-for="img in imgList[index]">
+       <a href="#" v-for="img in imgList[index]" :key="img">
            <img :src="img" alt="">
        </a>
        <div>
-           <a href="#" v-for="pic in picList[index]">
+           <a href="#" v-for="pic in picList[index]" :key="img">
                <img :src="pic" alt="">
            </a>
        </div>

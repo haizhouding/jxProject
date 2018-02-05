@@ -1,6 +1,6 @@
 <template>
     <div class="Home">
-       <slide-show></slide-show>
+       <picture-show :pictureList="pictureList"></picture-show>
        <pic-list></pic-list>
        <slide-picture></slide-picture>
        <picture-list :id="0"></picture-list>
@@ -19,11 +19,12 @@
        <headline-img-two :index="3"></headline-img-two>     
        <headline-list :id="5"></headline-list>   
        <headline-img-three></headline-img-three>
-       <h4>爆款推荐</h4>            
+       <h4>爆款推荐</h4>    
+       <message :imgList="imgList"></message>
     </div>
 </template>
 <script>
-import slideShow from './slideShow'
+import PictureShow from '../haizhou/PictureShow'
 import picList from './picList'
 import slidePicture from './slidePicture'
 import pictureList from './pictureList'
@@ -33,16 +34,46 @@ import headlineList from './headlineList'
 import headlineImgOne from './headlineImgOne'
 import headlineImgTwo from './headlineImgTwo'
 import headlineImgThree from './headlineImgThree'
-
+import message from './message'
 export default {
     name: "Home",
     data () {
         return {
-            
+            imgList: null,
+            pictureList: {
+                width: '10rem',
+                height: '4.8rem',
+                srcList: [
+                    "https://img09.jiuxian.com/bill/2018/0130/6882d20799fc471b929abacde1005371.jpg",
+                    "https://img06.jiuxian.com/bill/2018/0131/aabca6ead521421c8c2377e1a16d9480.jpg",
+                    "https://img07.jiuxian.com/bill/2018/0130/6b81b4a39146436ebf6ec66922e6d860.jpg",
+                    "https://img08.jiuxian.com/bill/2018/0130/41136c732eae4a988b01f9fd3a1380cb.jpg",
+                    "https://img09.jiuxian.com/bill/2018/0130/b0c61348b8364027977f7a3e753dcbc2.jpg",
+                    "https://img08.jiuxian.com/bill/2018/0122/bbdec61bee1647f6be6af82193b466b6.jpg",
+                    "https://img10.jiuxian.com/bill/2018/0130/4e469bb7fec042b89ea1a2b7fe536e21.jpg",
+                    "https://img10.jiuxian.com/bill/2018/0130/b13631ce115c420c8274bf1be995f257.jpg",
+                    "https://img06.jiuxian.com/bill/2018/0129/9574bec32b644cd3b15e1f130c3d571f.jpg"
+                ]
+            }
         }
     },
+    mounted () {
+       window.addEventListener('scroll', this.handleScroll)
+    },
+    methods: {
+       handleScroll () {
+    //         var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+    //         console.log(scrollTop)
+    //         if (scrollTop > 3100) {
+                this.axios.get("http://10.0.157.231:8888/getMessage?pageNum=1")
+                .then(res => {
+                    this.imgList = res.data.promoList
+                })
+    //         }
+       }
+    },
     components: {
-        slideShow,
+        PictureShow,
         picList,
         slidePicture,
         pictureList,
@@ -51,7 +82,8 @@ export default {
         headlineList,
         headlineImgOne,
         headlineImgTwo,
-        headlineImgThree
+        headlineImgThree,
+        message
     }
 }
 </script>
