@@ -1,9 +1,8 @@
 <template>
-    <div id="province">
+    <div id="province" @click="toDetails">
             <ul>
-                <li v-for="pro in regionsList[1]" :key="pro.id" @click ="proFn(pro[0])">{{pro[1]}}</li>
+                <li v-for="pro in regionsList[1]" :key="pro.id" @click.stop ="proFn(pro[0])">{{pro[1]}}</li>
             </ul>
-            <div class="curtian"></div>
     </div>
 </template>
 <script>
@@ -23,6 +22,9 @@ export default {
     methods: {
         proFn(num) {
             this.$router.push({ path: '/details/city' + num });
+        },
+        toDetails() {
+           this.$router.push('/details/')
         }
     }
 }
@@ -34,14 +36,19 @@ export default {
         width: 100%;
         overflow: hidden;
         z-index: 1000;
+        height: 21.333333rem;
+    }
+    #province ul{
+        width: 80%;
+        float: right;
+        padding: .266667rem;
+        background: #fff;
+        
     }
 
     #province li {
         line-height: 1rem;
-        width: 80%;
-        float: right;
         border-bottom: 1px solid #4b4949;
-        background: #fff;
         font-size: .426667rem;
         color: #746f6f;
 

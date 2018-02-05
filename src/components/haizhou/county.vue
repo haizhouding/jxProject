@@ -1,8 +1,8 @@
 <template>
-    <div id="county">
+    <div id="county" @click="toDetails">
           
             <ul>
-                <li v-for="county in countyList" :key="county.id" @click="countyFn()">{{county[1]}}</li>
+                <li v-for="county in countyList" :key="county.id" @click.stop="countyFn()">{{county[1]}}</li>
             </ul>
     </div>
 </template>
@@ -22,15 +22,15 @@ export default {
     methods: {
         countyFn() {
             this.$router.push('/details/contents/')
-
-
+        },
+        toDetails() {
+           this.$router.push('/details/')
         }
         
     },
     created() {
         this.regionsList = regions;        
         this.countyList = this.regionsList[this.$route.params.index];
-        console.log(this.countyList);
     }
 }
 </script>
