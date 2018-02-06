@@ -25,7 +25,7 @@
         },
         created() {
             for (var product of productLists) {
-                if( product.productId == 46890) {
+                if( product.productId == this.productId) {
                     this.commentsList = product.comments;
                 }
             }

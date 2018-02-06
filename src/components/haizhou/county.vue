@@ -21,11 +21,11 @@ export default {
     },
     methods: {
         countyFn(county) {
-            this.$router.push('/details/contents/')
+            this.$router.go(-3)
             this.$store.dispatch('setDistrict', county[1])
         },
         toDetails() {
-           this.$router.push('/details/')
+           this.$router.go(-3)
         }
         
     },

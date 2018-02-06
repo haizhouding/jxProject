@@ -31,12 +31,15 @@ export default {
             if (this.num > 1) {
                 this.num -= 1;
             }
+            this.$store.dispatch('setProductNum', this.num);
         },
         add() {
             this.num += 1;
+            this.$store.dispatch('setProductNum', this.num);
         } 
     },
     created() {
+        this.$store.dispatch('setProductNum', this.num);
         this.district = this.$store.getters.getDistrict
     }
 }

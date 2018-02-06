@@ -61,7 +61,7 @@ export default {
     methods:{
         toMore(data){
             console.log(data.pid);
-            this.$router.push("/details/"+ data.pid);
+            this.$router.push("/details/contents/"+ data.pid);
           
         },
         handleScroll() {

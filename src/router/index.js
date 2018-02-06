@@ -44,9 +44,10 @@ export default new Router({
     {path: '/types', component: types},
     {path: '/cart', component: cart},
     {path: '/list/:barName', component: list},
-    {path: '/details/:id', component: details, children: [
+    
+    {path: '/details', component: details, children: [
       {path:'', component: contents},
-      {path:'contents', component: contents},
+      {path:'contents/:id', component: contents},
       {path:'province', component: province},
       {path:'city:index', component: city},
       {path:'county:index', component: county}

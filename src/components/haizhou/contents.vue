@@ -51,7 +51,7 @@ export default {
         return {
             msg: '商品详情',
             detailList: {},
-            productId: 51617
+            productId: ''
         }
     },
     components:{
@@ -65,11 +65,13 @@ export default {
         productImg
     },
     created() {
+        this.productId = this.$route.params.id
         for (var product of productLists) {
             if( product.productId == this.productId) {
                 this.detailList = product;
             }
         }
+        this.$store.dispatch('setProductId', this.productId)
     }
 }
 </script>

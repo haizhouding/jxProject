@@ -21,10 +21,9 @@ export default {
         cityFn(city) {
             this.$router.push({ path: '/details/county' + city[0] });
             this.$store.dispatch('setTempCity', city[1]);
-
         }, 
         toDetails() {
-           this.$router.push('/details/')
+           this.$router.go(-2)
         }
 
     },
