@@ -1,5 +1,5 @@
 <template>
-    <div id="comments">
+    <div id="comments" v-if="commentsList.proEvalList">
         <h3>商品评价<span>（{{commentsList.totalEval}}人评价）</span> 
          <b>好评度<span>{{commentsList.goodEval}}%</span><i></i></b> </h3>
         <ul>
@@ -15,7 +15,6 @@
     </div>
 </template>
 <script>
-    import productLists from './json/product.json'
     export default {
         name: "comments",
         data () {
@@ -24,11 +23,14 @@
             };
         },
         created() {
-            for (var product of productLists) {
-                if( product.productId == this.productId) {
-                    this.commentsList = product.comments;
+            this.axios.get('http://10.0.157.209:8888/getProduct', {
+                params: {
+                    id: this.productId
                 }
-            }
+            }).then(res => {
+                this.commentsList = res.data.produt.comments
+                console.log(this.commentsList.proEvalList.slice(0,3))
+            })
         },
         props: ['productId']
     }

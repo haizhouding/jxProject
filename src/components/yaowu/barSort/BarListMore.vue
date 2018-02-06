@@ -12,7 +12,7 @@
                         </div>
                         <div>
                             <p>
-                                ><b  class="ba_red">￥{{data.commonProductInfo.jxPrice}}</b>
+                                <b  class="ba_red">￥{{data.commonProductInfo.jxPrice}}</b>
                             </p>
                             <p>
                                 <span>98% 好评</span>

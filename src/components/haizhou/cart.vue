@@ -27,7 +27,6 @@
 </template>
 <script>
 import HeaderBar from '../yaowu/barSort/barSortTop/BarSortTop.vue'
-import productLists from './json/product.json'
 
 
 export default {

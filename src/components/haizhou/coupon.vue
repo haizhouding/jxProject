@@ -1,6 +1,6 @@
 <template>
     <div id="coupon" >
-        <div class="backColor" v-show='!isShow'></div>
+        <div class="backColor" v-show='isShow'></div>
         <div class="cou" @click="show">
             领券
             <span>满1299减70</span>
@@ -8,22 +8,24 @@
             <span>满199减70</span>
             <i>&gt;</i>
         </div>
-        <div class="cou_info" :class="{show: isShow}">
-          <h3>优惠券 <span @click="hidden">X</span></h3>
-          <p>可用优惠券</p>
-          <ul>
-              <li v-for="num in 3" class="couSum" :key="num.id">
-                  <div class="right">
-                      <p><span>￥</span>79</p>
-                      <p>满1299元可用</p>
-                  </div>
-                  <div class="left">
-                      <p><span>满减</span>1299-70【朗格玛缔官方旗舰店专用】（酒友们春节快乐！）</p>
-                      <p class="t">2018.01.31-2018.02.13<a href="javascript:;">立即领取</a></p>
-                  </div>
-              </li>
-          </ul>
-        </div>
+        <transition name="slide-fade">
+            <div class="cou_info" v-if="isShow">
+                <h3>优惠券 <span @click="hidden">X</span></h3>
+                <p>可用优惠券</p>
+                <ul>
+                    <li v-for="num in 3" class="couSum" :key="num.id">
+                        <div class="right">
+                            <p><span>￥</span>79</p>
+                            <p>满1299元可用</p>
+                        </div>
+                        <div class="left">
+                            <p><span>满减</span>1299-70【朗格玛缔官方旗舰店专用】（酒友们春节快乐！）</p>
+                            <p class="t">2018.01.31-2018.02.13<a href="javascript:;">立即领取</a></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </transition>
     </div>
 </template>
     
@@ -32,15 +34,15 @@ export default {
     name: "coupon",
     data () {
         return {
-             isShow: true
+             isShow: false
         };
     },
     methods: {
         show() {
-             this.isShow = false;
+            this.isShow = true;
         },
         hidden() {
-            this.isShow = true;
+            this.isShow = false;
         }
        
     }
@@ -48,7 +50,16 @@ export default {
 </script>
     
 <style lang="css" scoped>
-
+    .slide-fade-enter-active {
+        transition: all .3s ease;
+    }
+    .slide-fade-leave-active {
+        transition: all .8s ease;
+    }
+    .slide-fade-enter, .slide-fade-leave-to {
+        transform: translateY(17.813333rem);
+         opacity: 0;
+    }
     #coupon .cou{
         width: 100%;
         height: 1.12rem;

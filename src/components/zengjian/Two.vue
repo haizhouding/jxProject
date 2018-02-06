@@ -16,11 +16,13 @@
              <a href="#">立即登录</a>
           </div>
           <div class="zhao">
-              <a href="#">免费注册</a>
+              <!-- <a href="#">免费注册</a> -->
+              <router-link to='/Formone' class='tiao'>免费注册</router-link>
+              <router-view></router-view>
               <a href="#">找回密码</a>
           </div>
           <div class="foot">
-              <p></p><a href="#">合作伙伴登录</a>  <p></p>
+              <p></p><a href="#">合作伙伴登录</a><p></p>
               <ul>
                   <li><a href=""></a></li>
                   <li><a href=""></a></li>
@@ -56,6 +58,7 @@ export default {
         .user-one{margin-top: .533333rem;}
         .user-one .phone{height:1.12rem; width:8rem; background: url(https://misc.jiuxian.com/m_user/images/loginIcon.png)no-repeat -3.8rem -.7rem;background-size:9rem;border: 1px solid #000;border-radius: 0.1rem;margin-left: 1.2rem;}
         .user-one .phone input{height: 1.02rem;width: 6rem;margin-left: .9rem;border: none;}
+        .user-one .tiao{font-size:.8rem;}
        .user-one .yzm{height: 1.02rem;margin-top: .8rem;} 
        .user-one .yzm input{height: 1.02rem;margin-left:1.266667rem;border-radius: .1rem;}
        .user-one .yzmimg{height: 1.02rem; width:3rem;float: right;}

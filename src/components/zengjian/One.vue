@@ -19,7 +19,8 @@
              <a href="#">立即登录</a>
           </div>
           <div class="zhao">
-              <a href="#">免费注册</a>
+
+              <a href="#"  @click='add'>免费注册</a>
               <a href="#">找回密码</a>
           </div>
           <div class="foot">
@@ -36,7 +37,9 @@
 
 
 <script>
+// import One from './Formone.vue'
 export default {
+
   name: "One",
         data () {
             return {
@@ -50,6 +53,8 @@ export default {
         methods: {
             abb(){
                 this.suiji = Math.floor(Math.random()*10000); 
+            },
+            add() {
                 
             }
         }
