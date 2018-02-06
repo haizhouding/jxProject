@@ -2,6 +2,9 @@ import Vue from 'vue'
 import Router from 'vue-router'
 Vue.use(Router)
 
+import Mint from 'mint-ui'
+Vue.use(Mint)
+
 
 
 import mine from '../components/zengjian/mine'

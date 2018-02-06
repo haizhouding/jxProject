@@ -9,7 +9,7 @@
                 }">{{ value.name }}</span>
             </p>
             <img  :src="pic.commonProductInfo.imgPath" alt="">
-            <p v-add>{{ pic.commonProductInfo.pname}}</p><p>asdasd</p>
+            <p v-add>{{ pic.commonProductInfo.pname}}</p><p>a</p>
             <p>
                 <span>￥{{ pic.commonProductInfo.jxPrice | keepDecimal }}</span>
                 <span>￥{{ pic.commonProductInfo.actPrice | keepDecimal }}</span>

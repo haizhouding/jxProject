@@ -12,9 +12,9 @@
 </template>
 <script>
 import Swiper from 'swiper'
-import 'swiper/dist/css/swiper.css'
+import '../../css/swiper.css'
 export default {
-    name: "slideShow",
+    name: "slideShow", 
     data () {
         return {
             timeId: null,
