@@ -1,8 +1,6 @@
 <template>
     <div class="picTwo">
-       <a href="#" v-for="img in imgList" :key="img">
-           <img :src="img">
-       </a>
+           <img v-for="img in imgList" :key="img" :src="img">
     </div>
 </template>
 <script>
@@ -21,19 +19,19 @@ export default {
 </script>
 <style lang="css" scoped>
     .picTwo {
-        clear: both;
+        overflow: hidden;
         margin: .266667rem 0;
     }
     .picTwo img {
         float: left;
     }
-    .picTwo a:first-of-type img{
+    .picTwo img:first-of-type{
         width: 4.933333rem;
     }
-    .picTwo a:nth-of-type(2) img{
+    .picTwo img:nth-of-type(2){
         width: 5.066667rem;
     }
-    .picTwo a:nth-of-type(3) img{
+    .picTwo img:nth-of-type(3){
         margin-top: .08rem;
         width: 5.066667rem;
     }

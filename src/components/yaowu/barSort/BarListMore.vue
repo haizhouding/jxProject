@@ -37,7 +37,7 @@ export default {
     },
     props:['message'],
     created(){
-       this.axios.get('http://10.0.157.234:8888/getMessage', {
+       this.axios.get('http://10.0.157.209:8888/getMessage', {
             params: {
                 pageNum:0,  
             }
@@ -72,10 +72,10 @@ export default {
                 this.pageNum += 1;
                 var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
                 // console.log(scrollTop,"----"+document.body.scrollHeight)
-                if(document.body.scrollHeight - scrollTop - document.body.offsetHeight <30){
+                if(document.body.scrollHeight - scrollTop - document.body.offsetHeight <-20){
                
                     
-                this.axios.get('http://10.0.157.234:8888/getMessage', {
+                this.axios.get('http://10.0.157.209:8888/getMessage', {
                     params: {
                         pageNum:this.pageNum
                     }

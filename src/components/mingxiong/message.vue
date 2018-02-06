@@ -8,7 +8,7 @@
                     color: value.wordColor
                 }">{{ value.name }}</span>
             </p>
-            <img  :src="pic.commonProductInfo.imgPath" alt="">
+            <img v-lazy="pic.commonProductInfo.imgPath" alt="">
             <p v-add>{{ pic.commonProductInfo.pname}}</p><p>a</p>
             <p>
                 <span>￥{{ pic.commonProductInfo.jxPrice | keepDecimal }}</span>
@@ -45,6 +45,15 @@ export default {
 }
 </script>
 <style lang="css" scoped>
+    image[lazy=loading] {
+        width: 4rem;
+        margin: 0 auto;
+        display: block;
+        background-color: url('https://m.jiuxian.com/mjava_statics/images/home/loazy_img.png');
+        background-size: 4rem;
+    }
+
+
     .message {
         background-color: #f3f5f6;
         overflow: hidden;

@@ -1,7 +1,7 @@
 <template>
     <div class="headlineImgThree">
        <a href="#" v-for="img in imgList" :key="img">
-           <img :src="img" alt="">
+           <img v-lazy="img" alt="">
        </a>
     </div>
 </template>
@@ -25,6 +25,9 @@ export default {
 }
 </script>
 <style lang="css" scoped>
+    image[lazy=loading] {
+        background: url('https://m.jiuxian.com/mjava_statics/images/home/loazy_img.png');
+    }
     .headlineImgThree {
         background-color: #f7f7f7;
     }

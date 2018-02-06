@@ -14,6 +14,10 @@ Vue.config.productionTip = false
 
 Vue.use(ElementUI)
 
+import Mint from 'mint-ui'
+
+Vue.use(Mint)
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

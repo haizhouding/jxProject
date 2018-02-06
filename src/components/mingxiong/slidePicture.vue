@@ -5,7 +5,7 @@
                 <div class="swiper-slide"
                     v-for="img in imgList" 
                     :key="img.id"
-                    >            
+                    @click="toDetails(img.proId)">            
                     <img :src="img.proImg"/>
                     <p v-add>{{ img.proName }}</p><p>a</p>
                     <p>￥{{ img.proPrice | keepDecimal }}</p>
@@ -38,6 +38,11 @@
                 }
             }
        },
+       methods: {
+           toDetails(id) {
+               this.$router.push({ path: 'details/contents/' + id })
+           }
+       },
         mounted() {
             setTimeout(function () {
                 new Swiper('.slidePicture', {
@@ -47,7 +52,7 @@
             }, 500)       
         },
         created() {
-            this.axios.get("http://10.0.157.234:8888/getMiaopai")
+            this.axios.get("http://10.0.157.209:8888/getMiaopai")
                 .then(res => {
                     this.imgList = res.data.killProList
                 })
