@@ -5,7 +5,7 @@
                 <div class="swiper-slide"
                     v-for="img in imgList" 
                     :key="img.id"
-                    >            
+                    @click="toDetails(img.proId)">            
                     <img :src="img.proImg"/>
                     <p v-add>{{ img.proName }}</p><p>a</p>
                     <p>￥{{ img.proPrice | keepDecimal }}</p>
@@ -37,6 +37,11 @@
                     el.nextSibling.innerHTML = text2
                 }
             }
+       },
+       methods: {
+           toDetails(id) {
+               this.$router.push({ path: 'details/contents/' + id })
+           }
        },
         mounted() {
             setTimeout(function () {

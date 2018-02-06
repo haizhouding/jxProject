@@ -1,11 +1,15 @@
 <template>
-    <div class="slideShowTwo">
-       <a href="#" v-for="value in imgList">
-           <img v-bind:src="value" alt="">
-       </a>
-    </div>
+        <div class="slideShowTwo">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" v-for="value in imgList" :key="value.id">
+                        <img v-bind:src="value" alt="">
+                </div>
+            </div>
+        </div>
 </template>
 <script>
+import Swiper from 'swiper'
+import '../../css/swiper.css'
 export default {
     name: "slideShowTwo",
     data () {
@@ -25,16 +29,27 @@ export default {
                 "https://img08.jiuxian.com/bill/2018/0122/d94ad9319cb345e08a1316bf41031b4a.jpg"
             ]
         };
-    }
+    },
+    mounted() {
+        setTimeout(function () {
+            new Swiper('.slideShowTwo', {
+                observe: true,
+                slidesPerView : 2.5,
+            });
+        }, 500)  
+    },
 }
 </script>
 <style lang="css" scoped>
-    .slideShowTwo{
-        width: 10rem;
-        display: flex;
+    .slideShowTwo>div{
+        width: 48rem;
+        /* display: flex; */
         margin-bottom: 1px;
     }
-    .slideShowTwo a img {
+    .slideShowTwo>div>div {
+        width: 4rem;
+    }
+    img {
         width: 4rem;
     }
 </style>
