@@ -11,7 +11,7 @@
             <p class="stripe"></p>
             <coupon></coupon>
             <p class="stripe"></p>
-            <p class="coins">金币 <span>赠送<i>99</i>个金币</span></p>  
+            <p class="coins">金币 <span>赠送<i>{{detailList.productPromo.goldCoinNum}}</i>个金币</span></p>  
             <p class="stripe"></p>            
             <district></district>  
             <div class="seven"> <b></b><span>店铺发货&售后</span><b></b><span>7天退换</span></div>
@@ -51,7 +51,7 @@ export default {
         return {
             msg: '商品详情',
             detailList: {},
-            productId: 46890
+            productId: ''
         }
     },
     components:{
@@ -65,11 +65,13 @@ export default {
         productImg
     },
     created() {
+        this.productId = this.$route.params.id
         for (var product of productLists) {
             if( product.productId == this.productId) {
                 this.detailList = product;
             }
         }
+        this.$store.dispatch('setProductId', this.productId)
     }
 }
 </script>

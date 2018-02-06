@@ -1,7 +1,7 @@
 <template>
     <div id="city" @click="toDetails">
             <ul>
-                <li v-for="city in cityList" :key="city.id" @click.stop ="cityFn(city[0])">{{city[1]}}</li>
+                <li v-for="city in cityList" :key="city.id" @click.stop ="cityFn(city)">{{city[1]}}</li>
             </ul>
     </div>
 </template>
@@ -18,11 +18,12 @@ export default {
         };
     },
     methods: {
-        cityFn(num) {
-            this.$router.push({ path: '/details/county' + num });
+        cityFn(city) {
+            this.$router.push({ path: '/details/county' + city[0] });
+            this.$store.dispatch('setTempCity', city[1]);
         }, 
         toDetails() {
-           this.$router.push('/details/')
+           this.$router.go(-2)
         }
 
     },

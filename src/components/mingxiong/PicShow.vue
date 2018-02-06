@@ -1,19 +1,21 @@
 <template>
-    <div id="pictureShow">
-        <div class="swiper-container">
-            <div class="swiper-wrapper ">
-                <div class="swiper-slide" 
-                v-for="src in pictureList.srcList" 
-                :key="src.id"
-                >            
-                <img :src="src" :style="{
-                   width: pictureList.width,
-                   height: pictureList.height
-                }" />
+    <div>
+        <div id="pictureShow">
+            <div class="swiper-container">
+                <div class="swiper-wrapper ">
+                    <div class="swiper-slide" 
+                    v-for="src in pictureList.srcList" 
+                    :key="src.id"
+                    >            
+                    <img :src="src" :style="{
+                    width: pictureList.width,
+                    height: pictureList.height
+                    }" />
+                    </div>
                 </div>
+        <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>  
             </div>
-    <!-- Add Pagination -->
-             <div class="swiper-pagination"></div>  
         </div>
     </div>
 </template>
@@ -29,14 +31,17 @@
             };
         },
         mounted() {
-            new Swiper('.swiper-container', {
-                 pagination :{
-                    el: '.swiper-pagination',
-                    clickable :true
-                },
-                loop: true,
-                observe: true
-            });
+            this.$nextTick(function () {
+                new Swiper('.swiper-container', {
+                    loop: true,
+                    observe: true,
+                    pagination :{
+                        el: '.swiper-pagination',
+                        clickable :true
+                    },
+                });
+            })
+            
         },
         props:['pictureList']
     }

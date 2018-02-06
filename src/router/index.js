@@ -2,6 +2,9 @@ import Vue from 'vue'
 import Router from 'vue-router'
 Vue.use(Router)
 
+import Mint from 'mint-ui'
+Vue.use(Mint)
+
 
 
 import mine from '../components/zengjian/mine'
@@ -47,9 +50,10 @@ export default new Router({
     {path: '/types', component: types},
     {path: '/cart', component: cart},
     {path: '/list/:barName', component: list},
+    
     {path: '/details', component: details, children: [
       {path:'', component: contents},
-      {path:'contents', component: contents},
+      {path:'contents/:id', component: contents},
       {path:'province', component: province},
       {path:'city:index', component: city},
       {path:'county:index', component: county}

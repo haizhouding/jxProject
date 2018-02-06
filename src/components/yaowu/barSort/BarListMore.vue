@@ -1,6 +1,6 @@
 <template>
         <ul>
-            <li v-for="(data, index) in datas" :key="data.id" :id = 'index'>
+            <li v-for="(data, index) in datas" :key="data.id" :id = 'index' @click="toMore(data.commonProductInfo)">
                 <figure>
                     <img :src=data.commonProductInfo.imgPath alt="">
                     <figcaption>
@@ -59,7 +59,11 @@ export default {
         window.addEventListener('scroll', this.handleScroll)
     },
     methods:{
-        
+        toMore(data){
+            console.log(data.pid);
+            this.$router.push("/details/contents/"+ data.pid);
+          
+        },
         handleScroll() {
             (() =>{
                 if(this.pageNum == 7){

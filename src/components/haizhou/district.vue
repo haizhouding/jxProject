@@ -3,9 +3,9 @@
         <div class="num"><span>数量</span> <p><span @click="reduce"> -</span><b>{{num}}</b><span @click="add">+</span></p></div>
         <router-link to="/details/province"> 
             <div class="regions">
-                <p>送至<span class="pro">{{pro}}</span>
-                <span class="city">{{city}}</span>
-                <span class="town">{{county}}</span>
+                <p>送至<span class="pro">{{district.pro}}</span>
+                <span class="city">{{district.city}}</span>
+                <span class="town">{{district.county}}</span>
                 <b></b></p>
                 <p class="has">有货</p>
             </div>
@@ -23,9 +23,7 @@ export default {
     data () {
         return {
             num: 1,
-            pro: '江苏',
-            city: '泰州',
-            county: '兴化'
+            district: {}
         };
     },
     methods: {
@@ -33,10 +31,16 @@ export default {
             if (this.num > 1) {
                 this.num -= 1;
             }
+            this.$store.dispatch('setProductNum', this.num);
         },
         add() {
             this.num += 1;
+            this.$store.dispatch('setProductNum', this.num);
         } 
+    },
+    created() {
+        this.$store.dispatch('setProductNum', this.num);
+        this.district = this.$store.getters.getDistrict
     }
 }
 </script>

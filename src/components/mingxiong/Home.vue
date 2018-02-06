@@ -1,5 +1,6 @@
 <template>
     <div class="Home">
+       <header-top :isFlag="isFlag"></header-top>
        <pic-show :pictureList="pictureList"></pic-show>
        <pic-list></pic-list>
        <slide-picture></slide-picture>
@@ -25,6 +26,7 @@
     </div>
 </template>
 <script>
+import headerTop from './headerTop'
 import picShow from './picShow'
 import picList from './picList'
 import slidePicture from './slidePicture'
@@ -43,6 +45,7 @@ export default {
         return {
             imgList: [],
             num: 0,
+            isFlag: false,
             count: null,
             pictureList: {
                 width: '10rem',
@@ -67,11 +70,12 @@ export default {
     },
     methods: {
         menu() {
+            
             var pageHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight)
             var viewportHeight = window.innerHeight || document.body.clientHeight
             var scrollTop =  window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
             if (pageHeight - viewportHeight - scrollTop < 20) {
-                if (this.num == this.count + 1) {
+                if (this.num == this.count) {
                     return
                 }
                 this.axios.get("http://10.0.157.234:8888/getMessage", {
@@ -81,15 +85,16 @@ export default {
                 })
                 .then(res => {
                     this.imgList = this.imgList.concat(res.data.promoList)
-                    this.count = Math.floor(res.data.totalCount / 10)
+                    this.count = Math.ceil(res.data.totalCount / 10)
                 })
-                this.num += 1
-                
+                    this.num += 1
             }
-                
+            //  当滚动到一定距离的时候显示返回首页的按钮
+            this.isFlag = scrollTop > viewportHeight*2/3 ? true : false
         }
     },
     components: {
+        headerTop,
         picShow,
         picList,
         slidePicture,
