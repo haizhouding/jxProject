@@ -47,7 +47,7 @@
             }, 500)       
         },
         created() {
-            this.axios.get("http://10.0.157.234:8888/getMiaopai")
+            this.axios.get("http://10.0.157.209:8888/getMiaopai")
                 .then(res => {
                     this.imgList = res.data.killProList
                 })

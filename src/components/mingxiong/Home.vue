@@ -78,7 +78,7 @@ export default {
                 if (this.num == this.count) {
                     return
                 }
-                this.axios.get("http://10.0.157.234:8888/getMessage", {
+                this.axios.get("http://10.0.157.209:8888/getMessage", {
                     params: {
                         pageNum: this.num
                     }

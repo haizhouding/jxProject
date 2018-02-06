@@ -37,7 +37,7 @@ export default {
     },
     props:['message'],
     created(){
-       this.axios.get('http://10.0.157.234:8888/getMessage', {
+       this.axios.get('http://10.0.157.209:8888/getMessage', {
             params: {
                 pageNum:0,  
             }
@@ -75,7 +75,7 @@ export default {
                 if(document.body.scrollHeight - scrollTop - document.body.offsetHeight <30){
                
                     
-                this.axios.get('http://10.0.157.234:8888/getMessage', {
+                this.axios.get('http://10.0.157.209:8888/getMessage', {
                     params: {
                         pageNum:this.pageNum
                     }
