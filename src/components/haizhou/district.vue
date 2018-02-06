@@ -17,7 +17,6 @@
 <script>
 
 
-import regions from './json/regions.json'
 export default {
     name: "district",
     data () {

@@ -12,7 +12,7 @@
 import HeaderBar from '../yaowu/barSort/barSortTop/BarSortTop.vue'
 import bottomBar from './bottomBar'
 import contents from './contents'
-import productLists from './json/product.json'
+// import productLists from './json/product.json'
 
 export default {
     name: "details",
@@ -35,7 +35,6 @@ export default {
             var scrollTop = window.pageYOffset ||
                 document.documentElement.scrollTop ||
                 document.body.scrollTop;
-                console.log(scrollTop)
             if (scrollTop > 200) {
                 this.is_show = true
             } else {

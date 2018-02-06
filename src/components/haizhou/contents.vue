@@ -1,5 +1,5 @@
 <template>
-    <div id="contents">
+    <div id="contents"  v-if="detailList">
             <down-load class="app"></down-load>
             <div class="main">
                 <picture-show :productId="productId"></picture-show>
@@ -43,15 +43,18 @@ import shop from './shop'
 import productIntro from './productIntro'
 import productImg from './productImg'
 import bottomBar from './bottomBar'
-import productLists from './json/product.json'
+
+
+// import productLists from './json/product.json'
 
 export default {
     name: "cart",
     data () {
         return {
             msg: '商品详情',
-            detailList: {},
-            productId: ''
+            detailList: null,
+            productId: '',
+            isGet: false
         }
     },
     components:{
@@ -66,11 +69,15 @@ export default {
     },
     created() {
         this.productId = this.$route.params.id
-        for (var product of productLists) {
-            if( product.productId == this.productId) {
-                this.detailList = product;
+        this.axios.get('http://10.0.157.209:8888/getProduct', {
+            params: {
+                id: this.productId
             }
-        }
+        }).then(res => {
+            this.detailList = res.data.produt
+            console.log(this.detailList)
+            this.isGet = true;
+        })
         this.$store.dispatch('setProductId', this.productId)
     }
 }

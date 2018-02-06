@@ -9,13 +9,10 @@
 <script>
 
 
-import regions from './json/regions.json'
 export default {
     name: "regions",
     data () {
         return {
-            regionsList: [],
-            cityList: [],
             countyList: []
         };
     },
@@ -30,8 +27,10 @@ export default {
         
     },
     created() {
-        this.regionsList = regions;        
-        this.countyList = this.regionsList[this.$route.params.index];
+        this.axios.get('http://10.0.157.209:8888/getRegions').then(res => {
+            this.countyList = res.data[this.$route.params.index];
+           
+        })
     }
 }
 </script>
