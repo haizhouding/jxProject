@@ -1,5 +1,5 @@
 <template>
-    <div id="pictureShow">
+    <div id="pictureShow" v-if="pictureList">
         <div class="swiper-container">
             <div class="swiper-wrapper ">
                 <div class="swiper-slide" 
@@ -17,9 +17,9 @@
     </div>
 </template>
 <script>
-    import productLists from './json/product.json'
+
     import Swiper from 'swiper'
-    import '../../css/swiper.css'
+    import 'swiper/dist/css/swiper.css'
     export default {
         name: "pictureShow",
         data () {
@@ -28,21 +28,29 @@
             }
         },
         mounted() {
-            new Swiper('.swiper-container', {
-                 pagination :{
-                    el: '.swiper-pagination',
-                    clickable :true
-                },
-                loop: true,
-                observe: true
-            });
+            setTimeout(() => {
+                new Swiper('.swiper-container', {
+                    pagination :{
+                        el: '.swiper-pagination',
+                        clickable :true
+                    },
+                    loop: true,
+                    observe: true,
+                    autoplay: true,
+                    notNextTick: true
+                    
+                });
+            }, 500);
+            
         },
         created() {
-            for (var product of productLists) {
-                if( product.productId == this.productId) {
-                    this.pictureList = product.pictureList;
+            this.axios.get('http://10.0.157.209:8888/getProduct', {
+                params: {
+                    id: this.productId
                 }
-            }
+            }).then(res => {
+                this.pictureList = res.data.produt.pictureList
+            })
         },
         props: ['productId']
     }

@@ -6,9 +6,6 @@
     </div>
 </template>
 <script>
-
-
-import regions from './json/regions.json'
 export default {
     name: "regions",
     data () {
@@ -17,14 +14,14 @@ export default {
         };
     },
     created() {
-        this.regionsList = regions;
+        this.axios.get('http://10.0.157.209:8888/getRegions').then(res => {
+           this.regionsList = res.data; 
+        })
     },
     methods: {
         proFn(pro) {
             this.$router.push({ path: '/details/city' + pro[0] });
             this.$store.dispatch('setTempPro', pro[1]);
-
-
         },
         toDetails() {
            this.$router.go(-1)

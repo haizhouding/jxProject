@@ -1,5 +1,5 @@
 <template>
-    <div id="productImg">
+    <div id="productImg" v-if="img">
        <div class="prodDet">
             <h3>
                 <i></i>产品特点
@@ -20,7 +20,6 @@
     </div>
 </template>
 <script>
-import productLists from './json/product.json'
 export default {
     name: "productImg",
     data () {
@@ -29,12 +28,15 @@ export default {
         };
     },
     created() {
-         for (var product of productLists) {
-            if( product.productId == 46890) {
-                this.img = product.imgList;
+         this.axios.get('http://10.0.157.209:8888/getProduct', {
+            params: {
+                id: this.productId
             }
-        }
-    }
+        }).then(res => {
+            this.img = res.data.produt.imgList
+        })
+    },
+    props: ['productId']
 }
 </script>
 <style lang="css" scoped>
