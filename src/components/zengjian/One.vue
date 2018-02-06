@@ -19,8 +19,7 @@
              <a href="#">立即登录</a>
           </div>
           <div class="zhao">
-
-              <a href="#"  @click='add'>免费注册</a>
+              <a href="#"  @click='jup'>免费注册</a>
               <a href="#">找回密码</a>
           </div>
           <div class="foot">
@@ -56,6 +55,9 @@ export default {
             },
             add() {
                 
+            },
+            jup() {
+                this.$router.push({ path: "/register" })
             }
         }
     }
