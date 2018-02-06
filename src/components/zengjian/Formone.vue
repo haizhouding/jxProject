@@ -8,7 +8,9 @@
 export default {
   name:"Formone",
   data() {
-    msg:'123'
+    return {
+       msg:'123'
+    }
   }
 
 }
