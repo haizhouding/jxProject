@@ -20,6 +20,9 @@ import cart from '../components/haizhou/cart.vue'
 //  导入One、Two 二级路由
 import One from '../components/zengjian/One'
 import Two from '../components/zengjian/Two'
+import Formone from '../components/zengjian/Formone'
+
+
 
 import contents from '../components/haizhou/contents.vue'
 import province from '../components/haizhou/province.vue'
@@ -50,6 +53,7 @@ export default new Router({
       {path:'province', component: province},
       {path:'city:index', component: city},
       {path:'county:index', component: county}
-    ]}
+    ]},
+    { path:'/Formone', component: Formone }
   ]
 })
