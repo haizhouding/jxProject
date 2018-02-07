@@ -20,10 +20,12 @@ import cart from '../components/haizhou/cart.vue'
 
 
 //跳到注册页面
+import ceng from '../components/zengjian/ceng'
 //  导入One、Two 二级路由
 import One from '../components/zengjian/One'
 import Two from '../components/zengjian/Two'
-import Formone from '../components/zengjian/Formone'
+// import Formone from '../components/zengjian/Formone'
+// import ceng from '../components/zengjian/ceng'
 
 
 
@@ -58,6 +60,7 @@ export default new Router({
       {path:'city:index', component: city},
       {path:'county:index', component: county}
     ]},
-    { path:'/Formone', component: Formone }
+    // { path:'/Formone', component: Formone },
+    { path:'/register' ,  component: ceng},
   ]
 })

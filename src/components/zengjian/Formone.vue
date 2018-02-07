@@ -4,7 +4,7 @@
 
 
 <script>
-// import Formone from './Two.vue'
+
 export default {
   name:"Formone",
   data() {
