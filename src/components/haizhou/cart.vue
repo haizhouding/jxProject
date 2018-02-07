@@ -58,8 +58,6 @@ export default {
         },
         createProductList() {
             this.productList = [];
-            
-            
             this.axios.get('http://10.0.157.209:8888/getAllProduct').then(res => {
                 for (var product of this.cartList) {
                     for (var good of res.data) {

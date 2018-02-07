@@ -5,7 +5,7 @@
                 <i></i>产品特点
             </h3>
         </div>
-        <img v-for="src in img.advImgList" :key="src.id" :src="src" 
+        <img v-for="src in img.advImgList" :key="src.id" v-lazy="src" 
         :style="{'width': '100%'}" alt="">
         <div class="factory">
             <h2>&nbsp;</h2>
@@ -40,6 +40,12 @@ export default {
 }
 </script>
 <style lang="css" scoped>
+    img[lazy=loading] {
+        width: 40px;
+        height: 300px;
+        margin: auto;
+        background: yellow;
+    }
     #productImg .prodDet {
         width: 100%;
         margin-top: .266667rem;
