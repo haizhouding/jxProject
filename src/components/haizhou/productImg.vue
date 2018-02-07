@@ -44,7 +44,7 @@ export default {
         width: 40px;
         height: 300px;
         margin: auto;
-        background: yellow;
+        background: url('https://m.jiuxian.com/mjava_statics/images/loazy_img.png');
     }
     #productImg .prodDet {
         width: 100%;

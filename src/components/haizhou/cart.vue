@@ -9,7 +9,7 @@
 
         <ul class="productList" v-if="isloading">
             <li v-for="(product, index) in cartList" :key="index">
-                <img :src="productList[index].pictureList.srcList[0]" alt="">
+                <img v-if="isloading" :src="productList[index].pictureList.srcList[0]" alt="">
                 <div class="intro">
                     <h3>{{productList[index].productTitile}}</h3>
                     <div class="price" >{{productList[index].productPromo.price | moneyFormatFn}}</div>
@@ -52,6 +52,7 @@ export default {
             this.$store.dispatch('reduceProductNum', id)
         },
         delProduct(id) {
+            this.isloading = false
             this.$store.dispatch('delProduct', id);
             this.createProductList()
             // console.log(this.productList)

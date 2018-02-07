@@ -27,7 +27,7 @@ export default {
     #productIntro{
         width: 100%;
         padding-left: .266667rem;
-        line-height: 25px;
+        line-height: .666667rem ;
         overflow: hidden;
     }
  

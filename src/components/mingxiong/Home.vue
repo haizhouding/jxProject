@@ -21,7 +21,11 @@
        <headline-list :id="5"></headline-list>   
        <headline-img-three></headline-img-three>
        <h4>爆款推荐</h4>    
-       <message :imgList='imgList'></message>
+       <message 
+        v-infinite-scroll="loadMore"
+        infinite-scroll-disabled="loading"
+        infinite-scroll-distance="10"
+       :imgList='imgList'></message>
        <home-footer></home-footer>
     </div>
 </template>
@@ -47,6 +51,7 @@ export default {
             num: 0,
             isFlag: false,
             count: null,
+            loading: false,
             pictureList: {
                 width: '10rem',
                 height: '4.8rem',
@@ -65,16 +70,13 @@ export default {
         }
     },
     mounted () {
-        window.addEventListener('scroll', this.menu)
+        // window.addEventListener('scroll', this.menu)
         
     },
     methods: {
-        menu() {
-            
-            var pageHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight)
-            var viewportHeight = window.innerHeight || document.body.clientHeight
-            var scrollTop =  window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
-            if (pageHeight - viewportHeight - scrollTop < 20) {
+        loadMore() {
+            this.loading = true;
+            setTimeout(() => {
                 if (this.num == this.count) {
                     return
                 }
@@ -88,9 +90,8 @@ export default {
                     this.count = Math.ceil(res.data.totalCount / 10)
                 })
                     this.num += 1
-            }
-            //  当滚动到一定距离的时候显示返回首页的按钮
-            this.isFlag = scrollTop > viewportHeight*2/3 ? true : false
+                this.loading = false;
+            }, 1000);
         }
     },
     components: {
