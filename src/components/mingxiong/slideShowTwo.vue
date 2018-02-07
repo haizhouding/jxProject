@@ -2,7 +2,7 @@
         <div class="slideShowTwo">
             <div class="swiper-wrapper">
                 <div class="swiper-slide" v-for="value in imgList" :key="value.id">
-                        <img v-bind:src="value" alt="">
+                        <img v-lazy="value" alt="">
                 </div>
             </div>
         </div>
@@ -41,9 +41,14 @@ export default {
 }
 </script>
 <style lang="css" scoped>
+    img[lazy=loading] {
+        width: 4rem;
+        height: 2.816rem;
+        background: url('https://m.jiuxian.com/mjava_statics/images/loazy_img.png');
+        background-size: 4rem 2.816rem;
+    }
     .slideShowTwo>div{
         width: 48rem;
-        /* display: flex; */
         margin-bottom: 1px;
     }
     .slideShowTwo>div>div {
