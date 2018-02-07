@@ -15,7 +15,7 @@ import contents from './contents'
 // import productLists from './json/product.json'
 
 export default {
-    name: "details",
+    name: "detail",
     data () {
         return {
              msg: '商品详情',
