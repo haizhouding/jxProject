@@ -11,8 +11,8 @@
             <img v-lazy="pic.commonProductInfo.imgPath" alt="">
             <p v-add>{{ pic.commonProductInfo.pname}}</p><p>a</p>
             <p>
-                <span>￥{{ pic.commonProductInfo.jxPrice | keepDecimal }}</span>
                 <span>￥{{ pic.commonProductInfo.actPrice | keepDecimal }}</span>
+                <span>￥{{ pic.commonProductInfo.jxPrice | keepDecimal }}</span>
             </p>
         </div>
     </div>

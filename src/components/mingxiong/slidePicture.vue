@@ -6,7 +6,7 @@
                     v-for="img in imgList" 
                     :key="img.id"
                     @click="toDetails(img.proId)">            
-                    <img :src="img.proImg"/>
+                    <img v-lazy="img.proImg"/>
                     <p v-add>{{ img.proName }}</p><p>a</p>
                     <p>￥{{ img.proPrice | keepDecimal }}</p>
                     <p>￥{{ img.jxPrice | keepDecimal }}</p>
@@ -71,6 +71,10 @@
     }
     .slidePicture>div>div {
         width: 2.933333rem;
+    }
+    img[lazy=loading] {
+        background: url('https://m.jiuxian.com/mjava_statics/images/loazy_img.png');
+        background-size: 2.933333rem;
     }
     img{
         width: 2.933333rem;
