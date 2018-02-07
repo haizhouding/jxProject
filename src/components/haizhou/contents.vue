@@ -76,7 +76,6 @@ export default {
         }).then(res => {
             this.detailList = res.data.produt
             console.log(this.detailList)
-            this.isGet = true;
         })
         this.$store.dispatch('setProductId', this.productId)
     }

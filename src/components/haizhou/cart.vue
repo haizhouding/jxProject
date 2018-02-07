@@ -7,18 +7,18 @@
             <p>快去逛逛吧</p>
         </div>
 
-        <ul class="productList">
+        <ul class="productList" v-if="isloading">
             <li v-for="(product, index) in cartList" :key="index">
                 <img :src="productList[index].pictureList.srcList[0]" alt="">
                 <div class="intro">
                     <h3>{{productList[index].productTitile}}</h3>
-                    <div class="price">{{productList[index].productPromo.price | moneyFormatFn}}</div>
+                    <div class="price" >{{productList[index].productPromo.price | moneyFormatFn}}</div>
                     <p class="num"><span @click="reduce(product.id)">-</span><b>{{product.num}}</b><span @click="add(product.id)">+</span></p>
                     <i @click="delProduct(product.id)">删除</i>
                 </div>
             </li>
         </ul>
-        <div class="bottomBar" v-show="this.cartList.length > 0">
+        <div class="bottomBar" v-show="this.cartList.length" v-if='isloading'> 
             <p class="total">合计：{{totalMoney | moneyFormatFn}}</p>
             <p class="buy">去结算({{totalNum}})</p>
             </div>
@@ -27,7 +27,7 @@
 </template>
 <script>
 import HeaderBar from '../yaowu/barSort/barSortTop/BarSortTop.vue'
-import productLists from './json/product.json'
+// import productLists from './json/product.json'
 
 
 export default {
@@ -36,8 +36,9 @@ export default {
         return {
             msg: '购物车',
             cartList: [],
-            productList: [],
-            totalmoney: 0
+            productList: null,
+            totalmoney: 0,
+            isloading : false
         };
     },
     components: {
@@ -57,13 +58,18 @@ export default {
         },
         createProductList() {
             this.productList = [];
-            for (var product of this.cartList) {
-                for (var good of productLists) {
-                    if (product.id == good.productId) {
-                        this.productList.push(good);
+            
+            
+            this.axios.get('http://10.0.157.209:8888/getAllProduct').then(res => {
+                for (var product of this.cartList) {
+                    for (var good of res.data) {
+                        if (product.id == good.productId) {
+                            this.productList.push(good);
+                        }
                     }
                 }
-            }
+                this.isloading = true;
+            })
         }
     },
     computed: {
