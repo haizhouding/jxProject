@@ -17,8 +17,7 @@
           </div>
           <div class="zhao">
               <!-- <a href="#">免费注册</a> -->
-              <router-link to='/Formone' class='tiao'>免费注册</router-link>
-              <router-view></router-view>
+              <a href="#" class='tiao' @click="jup" >免费注册</a>
               <a href="#">找回密码</a>
           </div>
           <div class="foot">
@@ -49,6 +48,10 @@ export default {
             abb(){
                 this.suiji = Math.floor(Math.random()*10000); 
                 
+            },
+            jup() {
+                //yijiluyo 
+                // this.$router.push({ path: "/register" });
             }
         }
     }
