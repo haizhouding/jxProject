@@ -70,12 +70,13 @@ export default {
        .user .oneuser{margin-top: 1.066667rem;}
        .user .oneuser input{height: 0.8rem;width: 6.333333rem;border: none;  margin-left: .733333rem;font-size: .426667rem;}
        .user .usertwo{height:1.066667rem;margin-top:1.366667rem; width: 8rem;height: 1.066667rem;margin-left:1.266667rem;border-radius: .1rem;background: url(https://misc.jiuxian.com/m_user/images/loginIcon.png)no-repeat -1rem -.2rem; background-size:5rem;  border:1px solid #000;}
-       .user .usertwo input{height: 0.8rem;width: 6.333333rem; margin-left: .733333rem;border: none; font-size: .426667rem;}
-       .user .yzm{height: 1.02rem;margin-top: .8rem;} 
+       .user .usertwo input{height: 0.8rem;width: 6.333333rem; margin-left: .733333rem;border: none; font-size: .326667rem;}
+       .user .yzm{height: 1.02rem;margin-top:.666667rem;} 
+       .user .yzm span{ display: block; width:6.333333rem;height:1.333333rem;font-size:.533333rem;}
        .user .yzm input{height: 1.02rem;margin-left:1.266667rem;border-radius: .1rem}
-       .user .yzmimg{height: 1.02rem; width:3rem;float: right;}
-        .user .yzmimg span{height: .8rem;display: block; width: 1.133333rem;float:left;margin-top: .266667rem}
-        .user .yzmimg a{line-height: 1.02rem;}
+       .user .yzmimg{height: 1.02rem; width:3rem;float: right;margin-right:.8rem}
+        .user .yzmimg span{display: block;height: .8rem; width: 1.33333rem;float:left;background:pink;}
+        .user .yzmimg a{line-height: 1.02rem;margin-left:.466667rem}
        .user .btn{width:8rem;height: .8rem;background:#de4943;margin-left: 1.066667rem;margin-top: .533333rem;}
        .user .btn a{font-size: .373333rem;text-align: center;line-height: .8rem;margin-left: 3rem;}
        .user .zhao{width:8rem;margin-left:1.266667rem;}
