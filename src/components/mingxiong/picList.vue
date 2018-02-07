@@ -18,9 +18,9 @@
        <div>
            <h3>掌上秒拍
                <span>距结束</span>
-               <span class="timeSpan">00</span> : 
-               <span class="timeSpan">33</span> : 
-               <span class="timeSpan">13</span>
+               <span class="timeSpan">{{ msg_h | addZero }}</span> : 
+               <span class="timeSpan">{{ msg_m | addZero }}</span> : 
+               <span class="timeSpan">{{ msg_s | addZero }}</span>
            </h3>
            <p>更多商品等你来抢!
                <span>&gt;</span>
@@ -34,6 +34,9 @@ export default {
     name: "picList",
     data () {
         return {
+            msg_h: '00',
+            msg_m: '00',
+            msg_s: '00',
             values: '',
             imgList1: [
                 "https://img09.jiuxian.com/bill/2018/0130/03f9261235ab4fb8adc7f9320fcf621b.jpg",
@@ -50,6 +53,19 @@ export default {
                 "https://img07.jiuxian.com/bill/2018/0130/fcb238c0a2664c1a9f786473727fda5f.jpg"
             ]
         };
+    },
+    mounted() {
+        setInterval(() => {
+            var date = new Date()
+            this.msg_h = 23 - date.getHours()
+            this.msg_m = 59 - date.getMinutes()
+            this.msg_s = 59 - date.getSeconds()
+        }, 1000)
+    },
+    filters: {
+        addZero(value) {
+            return value > 9 ? value : '0' + value
+        }
     },
     methods: {
         LastMore () {
