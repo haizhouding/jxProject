@@ -25,8 +25,10 @@ export default {
 }
 </script>
 <style lang="css" scoped>
-    image[lazy=loading] {
+    img[lazy=loading] {
+        width: 4.981333rem;
         background: url('https://m.jiuxian.com/mjava_statics/images/home/loazy_img.png');
+        background-size: 4.981333rem;
     }
     .headlineImgThree {
         background-color: #f7f7f7;
