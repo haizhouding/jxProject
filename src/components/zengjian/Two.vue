@@ -38,7 +38,7 @@ export default {
         data () {
             return {
                 // msg:'用户登录',
-                suiji:"1234"
+                suiji:"1234",
             };
         },
         // components: {
@@ -51,7 +51,7 @@ export default {
             },
             jup() {
                 //yijiluyo 
-                // this.$router.push({ path: "/register" });
+                this.$router.push({ path: "/register" });
             }
         }
     }
