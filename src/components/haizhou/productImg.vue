@@ -32,7 +32,7 @@ export default {
             params: {
                 id: this.productId
             }
-        }).then(res => {
+        }).then(function(res) {
             this.img = res.data.produt.imgList
         })
     },
