@@ -1,25 +1,15 @@
 <template>
     <div class="picList">
        <div>
-           <a href="#" v-for="value in imgList1" :key="value">
-               <img v-bind:src="value" alt="">
-           </a>
+            <img v-for="(value, index) in imgList1" :key="value" v-bind:src="value" alt="" @click="LastMore(index)">
        </div>
         <div>
-           <a href="#" v-for="value in imgList2" :key="value">
-               <img v-bind:src="value" alt="">
-           </a>
+            <img v-for="value in imgList2" :key="value" v-bind:src="value" alt="">
        </div>
-       <a href="#">
-           <img src="https://img10.jiuxian.com/bill/2018/0130/d0c6890743a142c88dd406cdca60038f.jpg" alt="">
-       </a>
+        <img src="https://img10.jiuxian.com/bill/2018/0130/d0c6890743a142c88dd406cdca60038f.jpg" alt="">
        <div>
-           <a href="#">
-               <img src="https://img06.jiuxian.com/bill/2018/0130/69660993d37040e6a4ebd2ecb5a07ac1.jpg" alt="">
-           </a>
-           <a href="#">
-               <img src="https://img10.jiuxian.com/bill/2018/0130/388d0021322448e2811d9d01eca0eb79.jpg" alt="">
-           </a>
+            <img src="https://img06.jiuxian.com/bill/2018/0130/69660993d37040e6a4ebd2ecb5a07ac1.jpg" alt="">
+            <img src="https://img10.jiuxian.com/bill/2018/0130/388d0021322448e2811d9d01eca0eb79.jpg" alt="">
        </div>
        <div>
            <img src="https://img09.jiuxian.com/bill/2017/1109/acb646caea3d4325b3664c9142852543.jpg" alt="">
@@ -28,9 +18,9 @@
        <div>
            <h3>掌上秒拍
                <span>距结束</span>
-               <span class="timeSpan">00</span> : 
-               <span class="timeSpan">33</span> : 
-               <span class="timeSpan">13</span>
+               <span class="timeSpan">{{ msg_h | addZero }}</span> : 
+               <span class="timeSpan">{{ msg_m | addZero }}</span> : 
+               <span class="timeSpan">{{ msg_s | addZero }}</span>
            </h3>
            <p>更多商品等你来抢!
                <span>&gt;</span>
@@ -44,6 +34,10 @@ export default {
     name: "picList",
     data () {
         return {
+            msg_h: '00',
+            msg_m: '00',
+            msg_s: '00',
+            values: '',
             imgList1: [
                 "https://img09.jiuxian.com/bill/2018/0130/03f9261235ab4fb8adc7f9320fcf621b.jpg",
                 "https://img09.jiuxian.com/bill/2018/0130/d669dbd064ca47c4a4190f97e4b437cd.jpg",
@@ -59,6 +53,26 @@ export default {
                 "https://img07.jiuxian.com/bill/2018/0130/fcb238c0a2664c1a9f786473727fda5f.jpg"
             ]
         };
+    },
+    mounted() {
+        setInterval(() => {
+            var date = new Date()
+            this.msg_h = 23 - date.getHours()
+            this.msg_m = 59 - date.getMinutes()
+            this.msg_s = 59 - date.getSeconds()
+        }, 1000)
+    },
+    filters: {
+        addZero(value) {
+            return value > 9 ? value : '0' + value
+        }
+    },
+    methods: {
+        LastMore () {
+            setTimeout(() => {
+                this.$router.push("/list/ + 123 ")
+            })
+        }
     }
 }
 </script>
@@ -68,17 +82,18 @@ export default {
         margin-top: 1px;
         /* background-color: purple; */
     }
-    .picList div img {
+    .picList div img{
         width: 2rem;
     }
-    .picList>a img {
+    .picList>img {
         width: 10rem;
     }
     .picList div:nth-of-type(3) {
         display: flex;
     }
-    .picList div:nth-of-type(3) a img {
+    .picList div:nth-of-type(3) img {
         width: 5rem;
+        height: 2.666667rem;
     }
     .picList div:nth-of-type(4) {
         height: 1.066667rem;

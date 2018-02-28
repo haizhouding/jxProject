@@ -3,20 +3,20 @@
         <form action="#">
             <div class="oneuser">
                 <i></i>
-                <input type="text" placeholder="用户名/手机/邮箱">
+                <input type="text" placeholder="用户名/手机/邮箱" v-model="user">
             </div>
             <div class="usertwo">
-                <input type="text" placeholder="密码">
+                <input type="text" placeholder="密码" v-model="pwd">
             </div>
             <div class="yzm">
-                <input type="text" placeholder="验证码">
+                <input type="text" placeholder="验证码" v-model="yzm">
                 <div class="yzmimg">
                     <span>{{ suiji }}</span>
                     <a href="#" @click="abb">换一批</a>
                 </div>
             </div>
           <div class="btn">
-             <a href="#">立即登录</a>
+             <button @click="login" >立即登录</button>
           </div>
           <div class="zhao">
               <a href="#"  @click='jup'>免费注册</a>
@@ -43,18 +43,25 @@ export default {
         data () {
             return {
                 // msg:'用户登录',
-                suiji:"1234"
+                suiji:"0503",
+                user:"",
+                pwd:"",
+                yzm:""
             };
         },
-        // components: {
-        //     BarSortTop
-        // },
         methods: {
             abb(){
-                this.suiji = Math.floor(Math.random()*10000); 
+                this.suiji = ''
+                for (var i = 0; i < 4; i++) {
+                    if (i == 0) {
+                        this.suiji += Math.floor(Math.random()*9 + 1)
+                    } else {
+                        this.suiji += Math.floor(Math.random()*10)
+                    }
+                }   
             },
-            add() {
-                
+            login() {
+               
             },
             jup() {
                 this.$router.push({ path: "/register" })
@@ -77,8 +84,8 @@ export default {
        .user .yzmimg{height: 1.02rem; width:3rem;float: right;margin-right:.8rem}
         .user .yzmimg span{display: block;height: .8rem; width: 1.33333rem;float:left;background:pink;}
         .user .yzmimg a{line-height: 1.02rem;margin-left:.466667rem}
-       .user .btn{width:8rem;height: .8rem;background:#de4943;margin-left: 1.066667rem;margin-top: .533333rem;}
-       .user .btn a{font-size: .373333rem;text-align: center;line-height: .8rem;margin-left: 3rem;}
+       .user .btn button{width:8rem;height: .8rem;background:#de4943;margin-left: 1.066667rem;margin-top: .533333rem;}
+       /* .user .btn p{font-size: .373333rem;text-align: center;line-height: .8rem;margin-left: 3rem;} */
        .user .zhao{width:8rem;margin-left:1.266667rem;}
        .user .zhao a:first-of-type{float: left;}
        .user .zhao a:last-of-type{float: right}

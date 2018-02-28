@@ -1,7 +1,7 @@
 <template>
     <div class="pictureList">
        <a href="#" v-for="img in imgList[id]" :key="img">
-           <img :src="img">
+           <img v-lazy="img">
        </a>
     </div>
 </template>
@@ -38,6 +38,10 @@ export default {
 <style lang="css" scoped>
     .pictureList{
         background-color: #f6f6f6;
+    }
+    img[lazy=loading] {
+        background: url('https://m.jiuxian.com/mjava_statics/images/home/loazy_img.png') no-repeat center center;
+        background-size: 5rem;
     }
     .pictureList img {
         width: 10rem;

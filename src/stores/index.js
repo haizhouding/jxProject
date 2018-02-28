@@ -13,7 +13,8 @@ export default new Vuex.Store({
         tempCity: '',
         cartList: [],
         productId: '',
-        productNum: ''
+        productNum: '',
+        userList: []
         
 
     },
@@ -74,6 +75,10 @@ export default new Vuex.Store({
                 }
             }
         }
+
+
+        //  用户登录的一些操作
+        
         
     },
     actions: {

@@ -45,15 +45,11 @@ export default {
 }
 </script>
 <style lang="css" scoped>
-    image[lazy=loading] {
+    img[lazy=loading] {
         width: 4rem;
-        margin: 0 auto;
-        display: block;
-        background-color: url('https://m.jiuxian.com/mjava_statics/images/home/loazy_img.png');
+        background: url('https://m.jiuxian.com/mjava_statics/images/home/loazy_img.png');
         background-size: 4rem;
     }
-
-
     .message {
         background-color: #f3f5f6;
         overflow: hidden;
